@@ -1,0 +1,17 @@
+a {
+  color: $gray;
+  transition: all ease 0.3s;
+  &:hover {
+    text-decoration: none;
+    color: $black;
+  }
+}
+
+.link-green {
+  color: $green;
+  transition: all ease 0.3s;
+  &:hover {
+    color: $dark-green;
+    text-decoration: none;
+  }
+}
