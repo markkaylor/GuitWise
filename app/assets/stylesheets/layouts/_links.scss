@@ -4,6 +4,7 @@ a {
   &:hover {
     text-decoration: none;
     color: $black;
+    cursor: pointer;
   }
 }
 
@@ -14,4 +15,8 @@ a {
     color: $dark-green;
     text-decoration: none;
   }
+}
+
+.devise-links {
+  margin-top: 10px;
 }

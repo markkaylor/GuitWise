@@ -7,22 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 3px solid $green;
-  a {
-    font-family: $headings-font-family;
-    text-decoration: none;
-    color: $green;
-  }
-  a:hover {
-    text-decoration: none;
-    color: $dark-green;
-    img {
-      background-color: white;
-    }
-  }
-  .btn {
-    color: white;
-  }
 }
 
 .navbar-content {
@@ -32,10 +16,13 @@
 }
 
 /* User Avatar */
-.avatar-wissen {
+.avatar-guitwise {
   height: 40px;
   width: 40px;
-  border-radius: 3px;
+  border-radius: 2px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .left-side {
@@ -45,7 +32,6 @@
   justify-content: space-between;
   >* {
     margin-right: 10px;
-    transition: all ease 0.3s;
   }
   h3 {
     margin: 0;

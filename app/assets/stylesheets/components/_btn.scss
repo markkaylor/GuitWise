@@ -1,0 +1,19 @@
+.btn-form {
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: $green;
+  &:hover {
+    background-color: $dark-green;
+    color: white;
+  }
+}
+
+.btn-transparent {
+  background-color: $gray;
+  opacity: 0.6;
+  color: transparent;
+  &:hover {
+    opacity: 1;
+  }
+}
