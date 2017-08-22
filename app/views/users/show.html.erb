@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-9">
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="card profile-card text-center">
+        <div class="avatar-guitwise-big" style="background-image: url('<%= avatar_url %>');"></div>
+        <h4 style="padding-top: 20px;"><%= current_user.name %></h4>
+        <table class="table">
+          <tr>
+            <td>Reputation:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Posts:</td>
+            <td><%= current_user.posts.count %></td>
+          </tr>
+          <tr>
+            <td>Comments:</td>
+            <td><%= current_user.comments.count %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
