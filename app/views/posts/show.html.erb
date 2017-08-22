@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="cards">
+      <div class="row">
+        <div class="post">
+          <div class="col-md-6 col-md-offset-3">
+            <div class= "row">
+              <h4>
+                <%= @post.title %>
+              </h4>
+            </div>
+            <div class="row">
+              <%= content_tag(:iframe, '', src: @post.video_url, width: 600, height: 390, frameborder: 0) %>
+            </div>
+            <div class="row">
+              <%= @post.content %>
+            </div>
+            <div class="row">
+              <span>Created:</span>  <%= time_ago_in_words @post.created_at %> <span>ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-md-7 col-md-offset-2" style= "border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: gray;">
+          <div class="comment">
+            <h4> <%= pluralize @post.comments.count, 'answer' %></h4>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-2">
+          <p>90210</p>
+        </div>
+        <div class="col-md-7">
+          <% @post.comments.each do |c| %>
+            <%= render "comment_cards", comment: c %>
+          <% end %>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
