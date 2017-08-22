@@ -11,3 +11,45 @@
   padding-top: 70px;
   margin: 50px;
 }
+
+.post-card-flex{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-card {
+  height: 277px;
+  width: 682px;
+  padding-top: 5px;
+  background-size: cover !important;
+  background-position: center;
+  position: relative;
+  border-bottom: solid 1px $gray;
+  &:first-of-type {
+    border-top: solid 1px $gray;
+    margin-top: 30px;
+  }
+}
+
+.post-card-video{
+  width: 340px;
+  height: 230px;
+  background: $gray;
+
+}
+
+.post-card-title{
+  font-size: 14px;
+}
+
+.post-card-link{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
