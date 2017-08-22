@@ -20,5 +20,9 @@
   tr > td {
     border: none !important;
     text-align: right;
-  }
+  };
 }
+
+.green-underline {
+  border-bottom: 3px solid $green;
+};

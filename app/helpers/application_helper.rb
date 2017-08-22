@@ -8,4 +8,14 @@ module ApplicationHelper
       @avatar_url = image_url "logo.png"
     end
   end
+
+  def this_avatar_url
+    if User.find(params[:id]).photo
+      @avatar_url = cl_image_path User.find(params[:id]).photo.path, height: 150, width: 150, crop: :thumb, gravity: :face
+    elsif User.find(params[:id]).facebook_picture_url
+      @avatar_url = User.find(params[:id]).facebook_picture_url
+    else
+      @avatar_url = image_url "logo.png"
+    end
+  end
 end
