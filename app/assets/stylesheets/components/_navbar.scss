@@ -16,10 +16,13 @@
 }
 
 /* User Avatar */
-.avatar-wissen {
+.avatar-guitwise {
   height: 40px;
   width: 40px;
-  border-radius: 3px;
+  border-radius: 2px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .left-side {

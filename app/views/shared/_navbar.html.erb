@@ -8,15 +8,14 @@
       </a>
       <% if user_signed_in? %>
         <div class="right-side">
-          <%= link_to "Share", "#", class: "link-green" %>
           <div class="dropdown">
-            <div class="avatar-wissen" style="background-color: blue" data-toggle="dropdown"></div>
+            <div class="avatar-guitwise" style="background-color: blue" data-toggle="dropdown"></div>
             <ul class="dropdown-menu">
             <li><%= link_to "Profile", user_path(current_user) %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: "delete" %></li>
           </ul>
           </div>
-          <%= link_to "Download", "#", class: "btn btn-danger" %>
+          <%= link_to "Share", "#", class: "link-green" %>
         </div>
       <% else %>
         <div class="right-side">
