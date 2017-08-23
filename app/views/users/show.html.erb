@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-9">
+      <h3 class="green-underline">Recent Videos</h3>
+        <% @this_user.posts.each do |post| %>
+        <% end -%>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="card profile-card text-center">
+        <div class="avatar-guitwise-big" style="background-image: url('<%= this_avatar_url %>');"></div>
+        <h4 style="padding-top: 20px;"><%= @this_user.name %></h4>
+        <table class="table">
+          <tr>
+            <td>Reputation:</td>
+            <td><%= @this_user.votes_of %></td>
+          </tr>
+          <tr>
+            <td>Posts:</td>
+            <td><%= @this_user.posts.count %></td>
+          </tr>
+          <tr>
+            <td>Comments:</td>
+            <td><%= @this_user.comments.count %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
