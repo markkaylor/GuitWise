@@ -10,11 +10,13 @@
 }
 
 .btn-transparent {
-  background-color: $gray;
+  background-color: #fff;
   opacity: 0.6;
-  color: transparent;
+  color: #333;
+  margin-left: 20px;
+  margin-top: 10px;
   &:hover {
-    opacity: 1;
+    opacity: .8;
   }
 }
 
