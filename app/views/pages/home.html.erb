@@ -10,5 +10,7 @@
 </div>
 
 <div class="page-wrapper">
-    <%= render 'shared/post_card' %>
+  <% @posts.each do |post|  %>
+      <%= render 'shared/post_card', post: post %>
+  <% end %>
 </div>
