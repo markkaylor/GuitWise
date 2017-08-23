@@ -17,3 +17,18 @@
     opacity: 1;
   }
 }
+
+.facebook-login {
+  width: 100%;
+  background-color: $facebook-blue;
+  color: white;
+  padding-top: 9px;
+  padding-left: 9px;
+  &:hover {
+    color: white;
+    background-color: $facebook-dark-blue;
+  }
+  i {
+    font-size: 27px;
+  }
+}
