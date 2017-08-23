@@ -21,7 +21,7 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'omniauth-facebook'
-gem "algoliasearch-rails"
+gem 'algoliasearch-rails'
 
 group :development, :test do
   gem 'pry-byebug'
