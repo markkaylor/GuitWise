@@ -51,102 +51,31 @@
 .post-card-middle {
   width: 55%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card-video {
+  width: 400px;
+  height: 230px;
+  background-color: $gray;
+}
+
+.post-card-title {
+  font-size: 14px;
+  padding-top: 5px;
 }
 
 .post-card-right {
   width: 30%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-// .post-card-row{
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-//   justify-content: center;
-// }
+.post-card-user{
+  padding-left: 162px;
+  padding-bottom: 19px;
+}
 
-// .post-card-flex {
-//   display:flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// .post-card {
-//   height: 277px;
-//   width: 682px;
-//   padding-top: 5px;
-//   position: relative;
-// }
-
-// .line-card {
-//   background-color: white;
-//   border-bottom: solid 1px $gray;
-//   &:first-of-type {
-//     border-top: solid 1px $gray;
-//     margin-top: 30px;
-//   }
-// }
-
-// .full-height {
-//   height: 277px;
-// }
-
-// .post-card-video {
-//   width: 340px;
-//   height: 230px;
-//   background-color: $gray;
-
-// }
-
-// .post-card-title {
-//   font-size: 14px;
-// }
-
-
-// .post-card-left {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-around;
-//   height: 100%;
-// }
-
-// .post-card-middle {
-//   height: 100%;
-// }
-
-// .post-card-right {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-end;
-//   height: 100%;
-// }
-
-// .fa-thumbs-up {
-//   font-size: 40px;
-
-// }
-
-// .votes-number {
-//   width: 100%;
-// }
-
-// .fa-thumbs-down {
-//   font-size: 40px;
-
-// }
-
-// .post-card-answers {
-//   height: 60px;
-//   width: 70px;
-//   background-color: $gray;
-// }
-
-// .post-card-user{
-//   width: 100%;
-//   display: flex;
-//   justify-content: flex-end;
-//   position: absolute;
-//   top: 240px;
-//   right: 20px;
-// }
