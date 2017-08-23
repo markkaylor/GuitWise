@@ -1,8 +1,13 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-9">
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-sm-9 card">
       <h3 class="green-underline">Recent Videos</h3>
-        <% @this_user.posts.each do |post| %>
+        <% if @this_user.posts.any? %>
+          <% @this_user.posts.each do |post| %>
+            <%= render 'shared/post_card' %>
+          <% end -%>
+        <% else %>
+          <p>This user has not posted yet.</p>
         <% end -%>
     </div>
     <div class="col-xs-12 col-sm-3">
