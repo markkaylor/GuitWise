@@ -4,6 +4,8 @@
       <div class="devise-card card">
         <h2>Sign up</h2>
 
+        <%= render 'devise/shared/social' %>
+        <h4 class="text-center" style="padding: 10px;">OR</h4>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
 

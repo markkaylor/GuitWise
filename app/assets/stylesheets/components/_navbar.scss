@@ -15,17 +15,6 @@
   justify-content: space-between;
 }
 
-/* User Avatar */
-.avatar-guitwise {
-  height: 40px;
-  width: 40px;
-  border-radius: 2px;
-  &:hover {
-    cursor: pointer;
-  }
-  background-size: cover;
-}
-
 .left-side {
   display: flex;
   flex-direction: row;
