@@ -12,7 +12,13 @@ class PostsController < ApplicationController
   end
 
   def create
-
+    @post = Post.new(post_params)
+    @post.user = current_user
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      redirect_to :new
+    end
   end
 
   def edit
