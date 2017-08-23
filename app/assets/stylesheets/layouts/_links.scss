@@ -6,6 +6,10 @@ a {
     color: $black;
     cursor: pointer;
   }
+  &:focus{
+    text-decoration: none;
+    color: $black;
+  }
 }
 
 .link-green {
@@ -14,6 +18,10 @@ a {
   &:hover {
     color: $dark-green;
     text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+    color: $dark-green;
   }
 }
 
