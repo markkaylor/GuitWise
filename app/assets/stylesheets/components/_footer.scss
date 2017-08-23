@@ -1,0 +1,35 @@
+.application-wrapper {
+  min-height: 100vh;
+}
+
+.footer-wrapper {
+  color: white;
+  background: linear-gradient(180deg, $light-gray, $gray);
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  p {
+    font-size: 15px;
+    margin: 0;
+  }
+  i {
+    font-size: 15px;
+  }
+}
+
+.footer-links {
+  margin-bottom: 15px;
+  a:first-of-type {
+    margin-left: 0;
+  }
+  a {
+    color: white;
+    margin-left: 20px;
+  }
+  a:hover {
+    color: $green;
+  }
+}
