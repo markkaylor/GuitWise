@@ -1,0 +1,17 @@
+.searchbar {
+  width: 40px;
+  height: 40px;
+  background-color: $light-gray;
+  border-radius: 50%;
+  border: none;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  &:focus {
+    width: 500px;
+    border: $green solid 1px;
+    outline: none;
+    border-radius: 999em;
+    padding-left: 35px;
+  }
+}
