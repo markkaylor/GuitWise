@@ -56,14 +56,14 @@
 .dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: darker !important;
-  color: $green !important;
+  color: $gray !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
 .dropdown-menu li > a:hover {
   background: transparent !important;
-  color: $dark-green !important;
+  color: $black !important;
 }
 .dropdown-menu:before {
   content: ' ';
