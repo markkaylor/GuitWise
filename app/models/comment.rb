@@ -4,4 +4,8 @@ class Comment < ApplicationRecord
   has_many :votes
 
   validates :video_url, presence: true
+
+  def votes_of
+    self.votes.sum(:value)
+  end
 end

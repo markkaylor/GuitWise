@@ -31,4 +31,15 @@ class User < ApplicationRecord
 
     return user
   end
+
+  def votes_of
+    number = 0
+    self.comments.each do |comment|
+      number += comment.votes.sum(:value)
+    end
+    self.posts.each do |post|
+      number += post.votes.sum(:value)
+    end
+    return number
+  end
 end
