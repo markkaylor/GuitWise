@@ -6,7 +6,12 @@
   <% end -%>
 </div>
 <div class="container card" style="padding: 50px; margin-top: 20px;">
-  <% @posts.each do |post| %>
-    <%= render 'shared/post_card', post: post %>
+  <% if @posts.any? %>
+    <h4><%= pluralize @number, "result" %></h4>
+    <% @posts.each do |post| %>
+      <%= render 'shared/post_card', post: post %>
+    <% end -%>
+  <% else %>
+    <h4>There are no results. Please try another search.</h4>
   <% end -%>
 </div>
