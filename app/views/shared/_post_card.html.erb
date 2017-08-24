@@ -12,7 +12,7 @@
 
   <div class="post-card-middle">
     <div class="post-card-title">
-    <h6><%= post.title %></h6>
+    <h6><%= link_to post.title, post_path(post) %></h6>
     </div>
     <div class="post-card-video">
       <iframe width="400" height="225" src="<%= post.video_url %>" frameborder="0" allowfullscreen></iframe>
@@ -22,14 +22,11 @@
   <div class="post-card-right">
 
   <div class="post-card-user">
-   <div class="post-card-info">
-  <div class="post-card-username"><%= post.user.name %></div>
-  <div class="post-card-time"><span>Posted</span> <%= time_ago_in_words post.created_at %> <span>ago</span></div>
-  </div>
-  <%=  image_tag post_avatar_url(post)  %>
-
-  </div>
-
-
+    <div class="post-card-info">
+      <div class="post-card-username"><%= link_to post.user.name, user_path(post.user) %></div>
+      <div class="post-card-time"><span>Posted</span> <%= time_ago_in_words post.created_at %> <span>ago</span></div>
+    </div>
+      <%= link_to(image_tag(post_avatar_url(post)), user_path(post.user)) %>
+    </div>
   </div>
 </div>
