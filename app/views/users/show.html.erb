@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-sm-9 card">
       <h3>Recent Videos</h3>
         <% if @this_user.posts.any? %>
-          <% @this_user.posts.each do |post| %>
+          <% @this_user.posts.reverse.each do |post| %>
             <%= render 'shared/post_card', post: post %>
           <% end -%>
         <% else %>
