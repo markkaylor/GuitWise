@@ -4,7 +4,7 @@
       <h3 class="green-underline">Recent Videos</h3>
         <% if @this_user.posts.any? %>
           <% @this_user.posts.each do |post| %>
-            <%= render 'shared/post_card' %>
+            <%= render 'shared/post_card', post: post %>
           <% end -%>
         <% else %>
           <p>This user has not posted yet.</p>
