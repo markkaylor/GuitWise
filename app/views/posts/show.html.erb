@@ -1,4 +1,29 @@
-<div class="container">
+<div class="page-wrapper">
+  <div class="row">
+    <%= render "show_post_card" %>
+  </div>
+  <div class="row">
+    <div class="col-md-7 col-md-offset-2" style= "border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: $gray;">
+      <div class="comment">
+        <h5> <%= pluralize @post.comments.count, 'answer' %></h5>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <% @post.comments.each do |c| %>
+      <%= render "shared/post_card", comment: c %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="container">
   <div class="row">
     <div class="cards">
       <div class="row">
@@ -10,7 +35,7 @@
               </h4>
             </div>
             <div class="row">
-              <%= content_tag(:iframe, '', src: @post.video_url, width: 600, height: 390, frameborder: 0) %>
+              <%= content_tag(:iframe, '', src: @post.video_url, width: 300, height: 190, frameborder: 0) %>
             </div>
             <div class="row">
               <%= @post.content %>
@@ -36,7 +61,7 @@
         </div>
         <div class="col-md-7">
           <% @post.comments.each do |c| %>
-            <%= render "comment_cards", comment: c %>
+            <%= render "shared/post_card", comment: c %>
           <% end %>
         </div>
         <div class="col-md-3">
@@ -46,5 +71,5 @@
     </div>
   </div>
 </div>
-
+ -->
 
