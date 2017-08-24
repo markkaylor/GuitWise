@@ -1,5 +1,11 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :destroy, :edit, :update]
+  before_action :set_post, only: [:show, :destroy, :edit, :update, :upvote, :downvote]
+
+  def upvote
+  end
+
+  def downvote
+  end
 
   def index
     Post.reindex
