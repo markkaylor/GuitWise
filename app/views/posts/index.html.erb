@@ -5,7 +5,8 @@
     <%= submit_tag "Search", class: "btn btn-success", style: "margin-left: 5px;" %>
   <% end -%>
 </div>
-<% results = Post.search params[:search] %>
-<% results.each do |post| %>
-  <%= render 'shared/post_card' %>
-<% end -%>
+<div class="container card" style="padding: 50px; margin-top: 20px;">
+  <% @posts.each do |post| %>
+    <%= render 'shared/post_card', post: post %>
+  <% end -%>
+</div>
