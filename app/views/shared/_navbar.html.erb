@@ -16,7 +16,7 @@
               <li><%= link_to "Log Out", destroy_user_session_path, method: "delete" %></li>
             </ul>
           </div>
-          <%= link_to "Share", "#", class: "link-green" %>
+          <%= link_to "Share", new_post_path, class: "link-green" %>
         </div>
       <% else %>
         <div class="right-side">
