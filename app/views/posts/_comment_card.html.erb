@@ -1,0 +1,51 @@
+<div class="row">
+
+  <div class="col-md-2">
+
+      <div class="comment-card-left">
+        <div class="comment-card-votes">
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+          <div class="votes-number"><%= comment.votes_of %></div>
+          <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+        </div>
+        <div class="comment-card-answers">
+          <h6><%# pluralize comment.count, 'Answer' %></h6>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="col-md-7">
+    <div class="comment-card-middle">
+      <div class="row">
+        <div class="comment-card-video">
+
+          <%= content_tag(:iframe, '', src: comment.video_url, width: 500, height: 300, frameborder: 0) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="comment-card-content">
+          <p><strong>Description</strong></p>
+          <p> <%= comment.content %> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="comment-card-right">
+      <%= image_tag post_avatar_url(@post), :class => "show-post-card-user-avatar" %>
+      <div class="comment-card-user">
+        <p> <%= comment.user.name %> </p>
+        <p>Posted</p> <p> <%= time_ago_in_words @post.created_at %> </p><p>ago</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
