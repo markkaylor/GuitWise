@@ -1,14 +1,19 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :destroy, :edit, :update]
+  skip_before_action :authenticate_user!, only: [ :show, :index ]
+
+  # Terminal instructions to start and check the elasticsearch
+  # sudo service elasticsearch start
+  # tail /var/log/elasticsearch/elasticsearch.log
+
 
   def index
-    Post.reindex
-    @posts = Post.search(params[:search])
+    @posts = Post.search(params[:search], misspellings: {edit_distance: 5})
     @number = @posts.count
   end
 
   def show
-    @posts = Post.find(params[:id])
+    @related = Post.search(@post.title, operator: "or")
   end
 
   def new
