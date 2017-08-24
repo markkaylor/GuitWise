@@ -6,7 +6,7 @@
       <i class="fa fa-thumbs-down" aria-hidden="true"></i>
     </div>
     <div class="post-card-answers">
-      <h6><%= pluralize post.comments.count, 'Answer' %></h6>
+      <h6><%= pluralize post.comments.count, 'Resonse' %></h6>
     </div>
   </div>
 
@@ -20,6 +20,16 @@
   </div>
 
   <div class="post-card-right">
-    <div class="post-card-user"><%=  image_tag post_avatar_url(post)  %></div>
+
+  <div class="post-card-user">
+   <div class="post-card-info">
+  <div class="post-card-username"><%= post.user.name %></div>
+  <div class="post-card-time"><span>Posted</span> <%= time_ago_in_words post.created_at %> <span>ago</span></div>
+  </div>
+  <%=  image_tag post_avatar_url(post)  %>
+
+  </div>
+
+
   </div>
 </div>

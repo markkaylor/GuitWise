@@ -24,6 +24,8 @@
   }
 }
 
+// Post Card
+
 .post-card-left {
   width: 15%;
   height: 100%;
@@ -52,12 +54,6 @@
   flex-direction: column;
 }
 
-// .post-card-video {
-//   width: 400px;
-//   height: 230px;
-//   background-color: $gray;
-// }
-
 .post-card-video {
   position: relative;
   padding-bottom: 56.25%;
@@ -82,9 +78,18 @@
   justify-content: flex-end;
 }
 
-.post-card-user{
-  padding-left: 162px;
-  padding-bottom: 19px;
+.post-card-username {
+  font-size: 18px;
+}
+
+.post-card-time {
+  font-size: 12px;
+}
+
+.post-card-user {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
 }
 
 .post-card-user img{
