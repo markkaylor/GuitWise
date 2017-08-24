@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def index
     Post.reindex
     @posts = Post.search(params[:search])
+    @number = @posts.count
   end
 
   def show
