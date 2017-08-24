@@ -10,7 +10,7 @@
 </div>
 
 <div class="page-wrapper">
-  <% @posts.each do |post|  %>
+  <% @posts.reverse.each do |post|  %>
       <%= render 'shared/post_card', post: post %>
   <% end %>
 </div>

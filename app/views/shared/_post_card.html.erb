@@ -1,4 +1,5 @@
 <div class="card-wrapper">
+  <div class="post-card-container">
   <div class="post-card-left">
     <div class="post-card-votes">
       <i class="fa fa-thumbs-up" aria-hidden="true"></i>
@@ -6,20 +7,34 @@
       <i class="fa fa-thumbs-down" aria-hidden="true"></i>
     </div>
     <div class="post-card-answers">
-      <h6><%= pluralize @post.comments.count, 'Answer' %></h6>
+      <h6><%= pluralize post.comments.count, 'Response' %></h6>
     </div>
   </div>
 
   <div class="post-card-middle">
+    <a href="<%= post_path(post) %>">
     <div class="post-card-title">
     <h6><%= @post.title %></h6>
     </div>
+    </a>
     <div class="post-card-video">
       <iframe width="400" height="225" src="<%= @post.video_url %>" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 
+
   <div class="post-card-right">
-    <div class="post-card-user"><%=  image_tag post_avatar_url(@post)  %></div>
+    <a href="<%= user_path(post.user) %>">
+    <div class="post-card-user">
+      <div class="post-card-info">
+        <div class="post-card-username"><%= post.user.name %></div>
+        <div class="post-card-time"><span>Posted</span> <%= time_ago_in_words post.created_at %> <span>ago</span></div>
+      </div>
+        <%= image_tag post_avatar_url(post) %>
+    </div>
+    </a>
   </div>
+  </div>
+  <%= link_to "", post_path(post), class:"post-link" %>
 </div>
+
