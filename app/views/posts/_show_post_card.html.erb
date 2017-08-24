@@ -1,43 +1,85 @@
-<div class="show-post-card-wrapper">
+<div class="row">
 
-  <div class="show-post-card-left">
-    <div class="show-post-card-votes">
-      <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-      <div class="votes-number">40</div>
-      <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+
+    <div class="col-md-3 col-sm-6">
+
+      <div class="show-post-card-left" style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 64vh;">
+
+        <div class="show-post-card-votes">
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+          <div class="votes-number">40</div>
+          <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+        </div>
+
+
+
+      </div>
+
+      <div class="row">
+
+          <div class="col-md-4 col-sm-6">
+            <div class="show-post-card-user-avatar">
+              <%= image_tag post_avatar_url(@post), :class => "show-post-card-user-avatar" %>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-sm-6">
+            <div class="show-post-card-user">
+              <%= @post.user.name %>
+            <p>Posted</p>  <%= time_ago_in_words @post.created_at %> <p>ago</p>
+            </div>
+          </div>
+
+      </div>
+
     </div>
+
+    <div class="col-md-9 col-sm-6">
+      <div class="show-post-card-middle">
+
+        <div class="row">
+          <div class="show-post-card-title">
+            <h4>
+              <%= @post.title %>
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="show-post-card-video">
+            <%= content_tag(:iframe, '', src: @post.video_url, width: 500, height: 300, frameborder: 0) %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="show-post-card-content">
+            <p><strong>Description</strong></p>
+            <p> <%= @post.content %> </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-sm-12">
+    <h5> <%= pluralize @post.comments.count, 'answer' %></h5>
   </div>
-
-  <div class="show-post-card-middle">
-    <div class="row">
-      <div class="show-post-card-title">
-        <h4>
-          <%= @post.title %>
-        </h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="show-post-card-video">
-        <%= content_tag(:iframe, '', src: @post.video_url, width: 500, height: 300, frameborder: 0) %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="show-post-card-content">
-        <p><strong>Description</strong></p>
-        <p> <%= @post.content %> </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="show-post-card-right">
-    <div class="row">
-      <div class="show-post-card-user-avatar">
-        <%= image_tag post_avatar_url(@post), :class => "show-post-card-user-avatar" %>
-      </div>
-    </div>
-    <div class="show-post-card-user">
-      <%= @post.user %>
-      <span>Posted</span>  <%= time_ago_in_words @post.created_at %> <span>ago</span>
-    </div>
+  <div class="col-md-10 col-md-offset-1 col-sm-12">
+  <hr style="height: 1.5px; background-color: lightgray; margin-top: auto">
   </div>
 </div>
+
+<div class="row">
+
+    <% @post.comments.each do |c| %>
+
+      <%= render "comment_card", comment: c %>
+    <% end %>
+
+</div>
+

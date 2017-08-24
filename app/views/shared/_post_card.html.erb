@@ -3,7 +3,7 @@
   <div class="post-card-left">
     <div class="post-card-votes">
       <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-      <div class="votes-number"><%= post.votes_of %></div>
+      <div class="votes-number"><%= @post.votes_of %></div>
       <i class="fa fa-thumbs-down" aria-hidden="true"></i>
     </div>
     <div class="post-card-answers">
@@ -14,11 +14,11 @@
   <div class="post-card-middle">
     <a href="<%= post_path(post) %>">
     <div class="post-card-title">
-    <h6><%= post.title %></h6>
+    <h6><%= @post.title %></h6>
     </div>
     </a>
     <div class="post-card-video">
-      <iframe width="400" height="225" src="<%= post.video_url %>" frameborder="0" allowfullscreen></iframe>
+      <iframe width="400" height="225" src="<%= @post.video_url %>" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 

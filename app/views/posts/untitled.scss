@@ -1,0 +1,137 @@
+
+.show-post-card-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 450px;
+  width: 850px;
+  margin: 0 auto;
+}
+
+.show-post-card-left {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.show-post-card-votes {
+  margin-top: 170px;
+}
+
+.show-post-card-middle {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: right;
+}
+
+.show-post-card-title {
+  margin-left: 15px;
+}
+
+.show-post-card-video {
+  margin-left: 15px;
+}
+
+.show-post-card-content {
+  padding-top: 5px;
+  margin-left: 15px;
+}
+
+.show-post-card-right {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-post-card-user {
+  padding-left: 162px;
+  padding-bottom: 19px;
+  flex-wrap: wrap;
+  p {
+    font-size: 9px;
+  }
+}
+
+.show-post-card-user-avatar {
+  border-radius: 50%;
+  width: 40px;
+}
+
+
+// Comment card css
+
+.comment-card-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 277px;
+  width: 750px;
+  margin: 0 auto;
+  border-bottom: solid 1px $gray;
+  margin-left: 139px;
+}
+
+.comment-card-left {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comment-card-votes {
+  margin-top: 70px;
+}
+
+.comment-card-middle {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: right;
+}
+
+.comment-card-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.comment-card-content {
+  padding-top: 5px;
+  margin-left: 15px;
+}
+
+.comment-card-right {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-card-user {
+  padding-left: 162px;
+  padding-bottom: 19px;
+  flex-wrap: wrap;
+  p {
+    font-size: 9px;
+  }
+}
+
+.comment-card-user-avatar {
+  border-radius: 50%;
+  width: 40px;
+}
