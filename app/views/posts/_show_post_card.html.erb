@@ -1,0 +1,43 @@
+<div class="show-post-card-wrapper">
+
+  <div class="show-post-card-left">
+    <div class="show-post-card-votes">
+      <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+      <div class="votes-number">40</div>
+      <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="show-post-card-middle">
+    <div class="row">
+      <div class="show-post-card-title">
+        <h4>
+          <%= @post.title %>
+        </h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="show-post-card-video">
+        <%= content_tag(:iframe, '', src: @post.video_url, width: 500, height: 300, frameborder: 0) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="show-post-card-content">
+        <p><strong>Description</strong></p>
+        <p> <%= @post.content %> </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="show-post-card-right">
+    <div class="row">
+      <div class="show-post-card-user-avatar">
+        <%= image_tag post_avatar_url(@post), :class => "show-post-card-user-avatar" %>
+      </div>
+    </div>
+    <div class="show-post-card-user">
+      <%= @post.user %>
+      <span>Posted</span>  <%= time_ago_in_words @post.created_at %> <span>ago</span>
+    </div>
+  </div>
+</div>
