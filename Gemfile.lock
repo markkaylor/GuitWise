@@ -35,6 +35,8 @@ GEM
     activejob (5.0.5)
       activesupport (= 5.0.5)
       globalid (>= 0.3.6)
+    activejob_backport (0.0.3)
+      activesupport (>= 4.0.0)
     activemodel (5.0.5)
       activesupport (= 5.0.5)
     activerecord (5.0.5)
@@ -90,6 +92,14 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
+    elasticsearch (5.0.4)
+      elasticsearch-api (= 5.0.4)
+      elasticsearch-transport (= 5.0.4)
+    elasticsearch-api (5.0.4)
+      multi_json
+    elasticsearch-transport (5.0.4)
+      faraday
+      multi_json
     erubis (2.7.0)
     execjs (2.7.0)
     faraday (0.12.2)
@@ -214,6 +224,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    searchkick (1.5.1)
+      activemodel
+      elasticsearch (>= 1)
+      hashie
     simple_form (3.5.0)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
@@ -255,6 +269,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activejob_backport
   algoliasearch-rails
   attachinary!
   autoprefixer-rails
@@ -278,6 +293,7 @@ DEPENDENCIES
   rails (= 5.0.5)
   redis
   sass-rails
+  searchkick (~> 1.3)
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)

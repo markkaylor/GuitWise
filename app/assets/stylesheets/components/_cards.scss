@@ -12,16 +12,35 @@
   margin: 50px;
 }
 
+// Post Card
+
 .card-wrapper {
-  display: flex;
-  flex-direction: row;
   height: 277px;
   width: 750px;
   margin: 0 auto;
+  position: relative;
   border-bottom: solid 1px $gray;
   &:first-of-type {
     border-top: solid 1px $gray;
   }
+}
+
+.post-card-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.post-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  background: black;
 }
 
 .post-card-left {
@@ -35,6 +54,10 @@
 
 .post-card-answers {
   margin-bottom: 20px;
+}
+
+.post-card-answers h6 {
+  margin-bottom: 0px;
 }
 
 .post-card-votes {
@@ -52,18 +75,17 @@
   flex-direction: column;
 }
 
-// .post-card-video {
-//   width: 400px;
-//   height: 230px;
-//   background-color: $gray;
-// }
+.post-card-title h6 {
+  margin-top: 6.5px;
+  margin-bottom: 6.5px;
+}
 
 .post-card-video {
   position: relative;
-  padding-bottom: 56.25%;
+  // padding-bottom: 56.25%;
   /* 16:9 */
-  padding-top: 25px;
-  height: 0;
+  // padding-top: 25px;
+  // height: 0;
 }
 
 .post-card-video iframe {
@@ -82,9 +104,22 @@
   justify-content: flex-end;
 }
 
-.post-card-user{
-  padding-left: 162px;
-  padding-bottom: 19px;
+.post-card-right a{
+  z-index: 2;
+}
+
+.post-card-username {
+  font-size: 18px;
+}
+
+.post-card-time {
+  font-size: 12px;
+}
+
+.post-card-user {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
 }
 
 .post-card-user img{
@@ -92,7 +127,6 @@
   width: 40px;
   border-radius: 2px;
 }
-
 
 .profile-card {
   padding: 50px;
@@ -109,76 +143,4 @@
   };
 }
 
-.green-underline {
-  border-bottom: 3px solid $green;
-};
-
 // Post show card css
-
-.show-post-card-wrapper {
-  display: flex;
-  flex-direction: row;
-  height: 450px;
-  width: 850px;
-  margin: 0 auto;
-  border-bottom: solid 1px $gray;
-  &:first-of-type {
-    border-top: solid 1px $gray;
-  }
-}
-
-.show-post-card-left {
-  width: 15%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.show-post-card-votes {
-  margin-top: 170px;
-}
-
-.show-post-card-middle {
-  width: 60%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: right;
-}
-
-.show-post-card-title {
-  margin-left: 15px;
-}
-
-.show-post-card-video {
-  margin-left: 15px;
-}
-
-.show-post-card-content {
-  padding-top: 5px;
-  margin-left: 15px;
-}
-
-.show-post-card-right {
-  width: 20%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.show-post-card-user {
-  padding-left: 162px;
-  padding-bottom: 19px;
-  flex-wrap: wrap;
-}
-
-.show-post-card-user-avatar {
-  border-radius: 50%;
-  width: 40px;
-}

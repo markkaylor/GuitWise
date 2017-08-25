@@ -22,6 +22,8 @@ gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'omniauth-facebook'
 gem 'algoliasearch-rails'
+gem 'searchkick', '~> 1.3'
+gem 'activejob_backport'
 
 group :development, :test do
   gem 'pry-byebug'
