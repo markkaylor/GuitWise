@@ -6,8 +6,8 @@
         <div class="show-votes-number"><%= @post.votes_of %></div>
         <i class="fa fa-thumbs-down" aria-hidden="true"></i>
       </div>
-      <div class="show-post-card-user">
-        <%= image_tag post_avatar_url(@post) %>
+      <div class="show-post-card-user text-center">
+        <%= image_tag post_avatar_url(@post), style: "margin-bottom: 5px;" %>
         <div class="show-post-card-info">
           <div class="show-post-card-username"><%= @post.user.name %></div>
           <div class="show-post-card-time"><span>Posted</span> <%= time_ago_in_words @post.created_at %> <span>ago</span></div>
@@ -17,7 +17,7 @@
 
     <div class="show-post-card-middle">
       <div class="show-post-card-title">
-        <h4><%= @post.title %></h4>
+        <h4 style="padding-top: 20px;"><%= @post.title %></h4>
       </div>
       <div class="show-post-card-video">
         <iframe width="550" height="309" src="<%= @post.video_url %>" frameborder="0" allowfullscreen></iframe>
@@ -30,3 +30,4 @@
   </div>
   <%= link_to "", post_path(@post), class:"post-link" %>
 </div>
+
