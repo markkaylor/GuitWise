@@ -3,7 +3,11 @@
 
  <div class="post-card-answers" id="show-responses">
     <h6><%= pluralize @post.comments.count, 'response' %></h6>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#commentModal">Comment</button>
+    <% if user_signed_in? %>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#commentModal">Comment</button>
+    <% else %>
+      <a class="btn btn-success" data-toggle="modal" data-target="#loginModal">Log in to comment</a>
+    <% end -%>
  </div>
 
   <% @post.comments.each do |c| %>

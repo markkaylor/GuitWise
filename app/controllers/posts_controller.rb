@@ -13,7 +13,6 @@ class PostsController < DeviseController
   end
 
   def show
-    @related = Post.search(@post.title, operator: "or")
     @comment = Comment.new
   end
 
