@@ -22,8 +22,8 @@
         <div class="right-side">
           <%= render 'shared/searchbar' %>
           <%= link_to "About" ,"#" %>
-          <%= link_to "Login", new_user_session_path %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "link-green" %>
+          <a data-toggle="modal" data-target="#loginModal">Log in</a>
+          <a class="link-green" data-toggle="modal" data-target="#signupModal">Sign up</a>
         </div>
       <% end -%>
     </div>
@@ -31,3 +31,5 @@
 </div>
 
 <%= render 'posts/new' %>
+<%= render 'devise/sessions/login' %>
+<%= render 'devise/registrations/signup' %>
