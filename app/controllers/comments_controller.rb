@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class CommentsController < DeviseController
   def upvote
   end
 
@@ -40,5 +40,11 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:video_url, :content, :id, :post_id)
+  end
+
+
+   # Gets the actual resource stored in the instance variable
+  def resource
+    @user = resource_name.to_s.capitalize.constantize.new
   end
 end
