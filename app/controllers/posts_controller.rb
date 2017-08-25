@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class PostsController < DeviseController
   before_action :set_post, only: [:show, :destroy, :edit, :update]
   skip_before_action :authenticate_user!, only: [ :show, :index ]
 
@@ -48,5 +48,11 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :video_url, :content)
+  end
+
+
+   # Gets the actual resource stored in the instance variable
+  def resource
+    @user = resource_name.to_s.capitalize.constantize.new
   end
 end
