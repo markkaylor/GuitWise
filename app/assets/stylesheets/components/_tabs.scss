@@ -1,0 +1,25 @@
+.tab {
+  color: $gray;
+  border-top: $light-gray solid 1px;;
+  border-bottom: $light-gray solid 1px;;
+  padding: 10px 50px 10px 50px;
+  transition: all ease 0.3s;
+  margin: 10px;
+  &:hover {
+   cursor: pointer;
+   color: $black;
+   border-top: $green solid 1px;
+   border-bottom: $green solid 1px;
+  }
+}
+
+.tab.active {
+   color: $black;
+   border-top: $green solid 1px;
+   border-bottom: $green solid 1px;
+}
+ .tabs {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+ }
