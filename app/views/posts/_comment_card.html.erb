@@ -1,45 +1,33 @@
-<div class="row">
-
-  <div class="col-md-2">
-
-      <div class="comment-card-left">
-        <div class="comment-card-votes">
-          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-          <div class="votes-number"><%= comment.votes_of %></div>
-          <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-        </div>
-        <div class="comment-card-answers">
-          <h6><%# pluralize comment.count, 'Answer' %></h6>
-        </div>
-      </div>
-
-  </div>
-
-  <div class="col-md-7">
-    <div class="comment-card-middle">
-      <div class="row">
-        <div class="comment-card-video">
-
-          <%= content_tag(:iframe, '', src: comment.video_url, width: 500, height: 300, frameborder: 0) %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="comment-card-content">
-          <p><strong>Description</strong></p>
-          <p> <%= comment.content %> </p>
-        </div>
-      </div>
+<div class="card-wrapper">
+  <div class="post-card-container">
+  <div class="post-card-left">
+    <div class="post-card-votes">
+      <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+      <div class="votes-number"><%= comment.votes_of %></div>
+      <i class="fa fa-thumbs-down" aria-hidden="true"></i>
     </div>
   </div>
 
-  <div class="col-md-3">
-    <div class="comment-card-right">
-      <%= image_tag post_avatar_url(@post), :class => "show-post-card-user-avatar" %>
-      <div class="comment-card-user">
-        <p> <%= comment.user.name %> </p>
-        <p>Posted</p> <p> <%= time_ago_in_words @post.created_at %> </p><p>ago</p>
-      </div>
+  <div class="post-card-middle">
+    <div class="post-card-video">
+      <iframe width="400" height="225" src="<%= comment.video_url %>" frameborder="0" allowfullscreen></iframe>
     </div>
+    <div class="post-card-title">
+     <h6><%= comment.content %></h6>
+    </div>
+  </div>
+
+
+  <div class="post-card-right">
+    <div class="post-card-user">
+      <div class="post-card-info">
+        <div class="post-card-username"><%= comment.user.name %></div>
+        <div class="post-card-time"><span>Posted</span> <%= time_ago_in_words comment.created_at %> <span>ago</span></div>
+      </div>
+        <%= image_tag post_avatar_url(comment) %>
+    </div>
+    </a>
+  </div>
   </div>
 </div>
 
