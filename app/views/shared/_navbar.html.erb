@@ -16,7 +16,7 @@
               <li><%= link_to "Log Out", destroy_user_session_path, method: "delete" %></li>
             </ul>
           </div>
-          <%= link_to "Share", new_post_path, class: "link-green" %>
+          <a class="link-green" data-toggle="modal" data-target="#postModal">Post</a>
         </div>
       <% else %>
         <div class="right-side">
@@ -29,3 +29,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'posts/new' %>
