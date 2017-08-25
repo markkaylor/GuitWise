@@ -5,7 +5,7 @@
       <div class="banner-message">
         <h5>Join the community of guitarists
         <br> learning from each other</h5>
-        <%= link_to "Share Your Practice", new_post_path, class: "btn btn-transparent" %>
+        <a class="btn btn-transparent" data-toggle="modal" data-target="#postModal">Post Your Practice</a>
       </div>
     </div>
   </div>
@@ -16,3 +16,5 @@
       <%= render 'shared/post_card', post: post %>
   <% end %>
 </div>
+
+<%= render 'posts/new' %>
