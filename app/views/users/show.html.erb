@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row" style="margin-top: 20px;">
-    <div class="col-xs-12 col-sm-9 card">
+    <div class="col-xs-12 col-sm-9 card" style="padding-bottom: 100px;">
       <h3>Recent Videos</h3>
         <% if @this_user.posts.any? %>
           <% @this_user.posts.reverse.each do |post| %>
