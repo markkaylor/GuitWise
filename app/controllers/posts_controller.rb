@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def show
     @related = Post.search(@post.title, operator: "or")
+    @comment = Comment.new
   end
 
   def new
@@ -47,6 +48,5 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :video_url, :content)
-
   end
 end
