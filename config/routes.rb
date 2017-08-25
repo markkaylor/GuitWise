@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   mount Attachinary::Engine => "/attachinary"
 
-  root to: 'pages#home'
+  devise_scope :user do
+    root to: 'pages#home'
 
   resources :users,  only: [:show]
 
@@ -19,6 +20,11 @@ Rails.application.routes.draw do
       post 'downvote'
     end
   end
+  end
+
+
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
