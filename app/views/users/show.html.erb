@@ -1,7 +1,13 @@
 <div class="container">
   <div class="row" style="margin-top: 20px;">
     <div class="col-xs-12 col-sm-9 card" style="padding-bottom: 100px;">
-      <h3>Recent Videos</h3>
+      <div class="tabs">
+        <a class="active tab" data-target="#recent-posts">Recent Posts</a>
+        <a class="tab" data-target="#recent-comments">Recent Comments</a>
+        <a class="tab" data-target="#recent-upvotes">Recent Upvotes</a>
+      </div>
+      <div id="recent-posts" class="user-sections">
+        <h3>Recent Posts</h3>
         <% if @this_user.posts.any? %>
           <% @this_user.posts.reverse.each do |post| %>
             <%= render 'shared/post_card', post: post %>
@@ -9,6 +15,31 @@
         <% else %>
           <p>This user has not posted yet.</p>
         <% end -%>
+      </div>
+      <div id="recent-comments" class="user-sections hidden">
+        <h3>Recent Comments</h3>
+        <% if @this_user.comments.any? %>
+          <% @this_user.comments.reverse.each do |comment| %>
+            <%= render 'shared/post_card', post: comment.post %>
+          <% end -%>
+        <% else %>
+          <p>This user has not commented yet.</p>
+        <% end -%>
+      </div>
+      <div id="recent-upvotes" class="user-sections hidden">
+        <h3>Recent Upvotes</h3>
+        <% if @this_user.votes.any? %>
+          <% @this_user.votes.reverse.each do |vote| %>
+            <% if vote.post_id %>
+              <%= render 'shared/post_card', post: vote.post %>
+            <% else %>
+              <%= render 'shared/post_card', post: vote.comment.post %>
+            <% end -%>
+          <% end -%>
+        <% else %>
+          <p>This user has not voted yet.</p>
+        <% end -%>
+      </div>
     </div>
     <div class="col-xs-12 col-sm-3">
       <div class="card profile-card text-center">

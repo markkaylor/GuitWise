@@ -17,6 +17,7 @@
 }
 
 .form-control {
+  color: $black;
   &:focus {
     box-shadow: none;
     border-color: $green;
