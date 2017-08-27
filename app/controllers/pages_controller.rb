@@ -1,8 +1,11 @@
 class PagesController < DeviseController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :about]
 
   def home
     @posts = Post.all
+  end
+
+  def about
   end
 
   private
