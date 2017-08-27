@@ -7,13 +7,16 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body new-post">
         <%= simple_form_for(Post.new) do |f| %>
           <div class="form-inputs">
             <%= f.input :title, required: true, autofocus: true, label: false, placeholder: "What are you going to ask or talk about?" %>
             <%= f.input :video_url, required: true, label: false, placeholder: "www.youtube.com/myvideo"%>
             <%= f.input :content, label: false, placeholder: "Write some more information about your video if you want" %>
-            <%= f.input :tag, label: false, placeholder: "Add tags separated by spaces" %>
+            <div id="tags" class="form-group">
+              <input type="text" placeholder="Add tags separated by spaces or commas." class="form-control" />
+            </div>
+            <%= f.input :tag, as: :hidden, label: false, class: "tags-hidden" %>
           </div>
           <div class="form-actions">
             <%= f.submit "Submit", class: "btn btn-form" %>
