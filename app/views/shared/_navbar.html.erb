@@ -9,6 +9,7 @@
       <% if user_signed_in? %>
         <div class="right-side">
           <%= render 'shared/searchbar' %>
+          <%= link_to "About" ,"#" %>
           <div class="dropdown">
             <div class="avatar-guitwise" style="background-image: url('<%= avatar_url %>');" data-toggle="dropdown"></div>
             <ul class="dropdown-menu">

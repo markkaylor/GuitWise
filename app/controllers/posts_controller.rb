@@ -13,7 +13,6 @@ class PostsController < DeviseController
   end
 
   def show
-    @related = Post.search(@post.title, operator: "or")
     @comment = Comment.new
   end
 
@@ -47,7 +46,7 @@ class PostsController < DeviseController
   end
 
   def post_params
-    params.require(:post).permit(:title, :video_url, :content)
+    params.require(:post).permit(:title, :video_url, :content, :tag)
   end
 
 
