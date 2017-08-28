@@ -1,11 +1,14 @@
 $(function(){
-      var tagInput = "";
+  var tagInput = "";
   $("#tags input").on({
     focusout : function() {
       var txt = this.value.replace(/[^a-z0-9\+\-\.\#]/ig,''); // allowed characters
       if(txt) $("<span/>", {text:txt.toLowerCase(), insertBefore:this});
-      if (txt) {tagInput += ' ' + txt};
-      if (txt) {$(".tags-hidden").val(tagInput)};
+      if(txt) {
+        tagInput += ' ' + txt
+        $("#post_tag").val(tagInput);
+      };
+
       this.value = "";
     },
     keyup : function(ev) {
@@ -14,7 +17,11 @@ $(function(){
     }
   });
   $('#tags').on('click', 'span', function() {
+    var tagInput = $("#post_tag").val();
+    tagInput = tagInput.replace($(this).text(), '');
+    $("#post_tag").val(tagInput);
     $(this).remove();
+
   });
   // $('.new-post.form-actions input').blur( function() {
   //   // $(window).bind('beforeunload', function(){
