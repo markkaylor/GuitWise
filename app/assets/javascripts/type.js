@@ -1,8 +1,8 @@
 // set up text to print, each item in array is new line
 var aText = new Array(
 "Post videos with questions about the music you are learning ",
-"Respond with videos to give feedback or show your progress",
-"Share your knowledge with a short video tutorial"
+  "Respond with videos to give feedback or show your progress",
+      "Share your knowledge with a short video tutorial"
 );
 var iSpeed = 60; // time delay of print out
 var iIndex = 0; // start printing array at this posision

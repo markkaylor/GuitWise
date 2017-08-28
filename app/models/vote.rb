@@ -4,4 +4,6 @@ class Vote < ApplicationRecord
   belongs_to :comment
 
   validates :value, presence: true
+  validates :post, uniqueness: { scope: :user }
+  validates :user, uniqueness: { scope: :post }
 end

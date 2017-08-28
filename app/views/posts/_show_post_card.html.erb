@@ -2,9 +2,13 @@
   <div class="show-post-card-container">
     <div class="show-post-card-left">
       <div class="show-post-card-votes">
-        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        <%= link_to upvote_post_path, method: :post do %>
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        <% end %>
         <div class="show-votes-number"><%= @post.votes_of %></div>
+        <%= link_to downvote_post_path, method: :post do %>
         <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+        <% end %>
       </div>
       <div class="show-post-card-user text-center">
         <%= image_tag post_avatar_url(@post), style: "margin-bottom: 5px;" %>
