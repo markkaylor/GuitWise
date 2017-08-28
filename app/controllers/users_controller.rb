@@ -2,6 +2,7 @@ class UsersController < DeviseController
   before_action :authenticate_user!
   def show
     @this_user = User.find(params[:id])
+    @relationship = Follow.find_by(follower: current_user, following: User.find(params[:id]))
   end
 
 

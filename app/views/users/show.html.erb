@@ -45,6 +45,11 @@
       <div class="card profile-card text-center">
         <div class="avatar-guitwise-big" style="background-image: url('<%= this_avatar_url %>');"></div>
         <h4 style="padding-top: 20px;"><%= @this_user.name %></h4>
+        <% if @relationship %>
+          <%= link_to "Unfollow", follow_path(@relationship), method: :delete, class: "link-green" %>
+        <% else %>
+          <%= link_to "Follow", user_follows_path(@this_user), method: :post, class: "link-green" %>
+        <% end -%>
         <table class="table">
           <tr>
             <td>Reputation:</td>
@@ -57,6 +62,14 @@
           <tr>
             <td>Comments:</td>
             <td><%= @this_user.comments.count %></td>
+          </tr>
+          <tr>
+            <td>Followers:</td>
+            <td><%= @this_user.followers.count %></td>
+          </tr>
+          <tr>
+            <td>Following:</td>
+            <td><%= @this_user.followings.count %></td>
           </tr>
         </table>
       </div>

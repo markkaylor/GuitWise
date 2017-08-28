@@ -9,7 +9,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :votes
-
+  has_many :followers, foreign_key: "following_id", class_name: "Follow"
+  has_many :followings, foreign_key: "follower_id", class_name: "Follow"
 
   #
   has_many :posts
@@ -35,7 +36,6 @@ class User < ApplicationRecord
 
     return user
   end
-
 
   def votes_of
     number = 0

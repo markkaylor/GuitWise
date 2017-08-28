@@ -25,9 +25,15 @@
 </div>
 
 <div class="page-wrapper">
+<% if current_user && @follow_posts.any? %>
+  <% @follow_posts.reverse.each do |post| %>
+    <%= render 'shared/post_card', post: post %>
+  <% end -%>
+<% else %>
   <% @posts.reverse.each do |post|  %>
       <%= render 'shared/post_card', post: post %>
   <% end %>
+<% end -%>
 </div>
 
 <%= render 'posts/new' %>
