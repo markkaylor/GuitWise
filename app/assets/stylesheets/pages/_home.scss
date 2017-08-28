@@ -1,17 +1,18 @@
 // Specific CSS for your home-page
 #banner{
-  height: 35vh;
+  height: 40vh;
   width: auto;
   background-size: cover;
   display: flex;
   background-position: bottom;
 }
 
-#banner h5{
+#typedtext {
   margin: 0;
   line-height: 24px;
   color: white;
   opacity: .9;
+  height: 72px;
 }
 
 .banner-flex {
@@ -32,3 +33,4 @@
   padding-top: 30px;
   padding-bottom: 100px;
 }
+
