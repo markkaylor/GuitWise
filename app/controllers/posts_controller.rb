@@ -5,7 +5,29 @@ class PostsController < DeviseController
   # Terminal instructions to start and check the elasticsearch
   # sudo service elasticsearch start
   # tail /var/log/elasticsearch/elasticsearch.log
+  def upvote
+    @post = Post.find(params[:id])
+    vote = @post.votes.new
+    vote.user = current_user
+    vote.value = 1
+    if Vote.find_by(user: current_user, value: -1)
+      Vote.find_by(user: current_user, value: -1).destroy
+    end
+    vote.save
+    redirect_to(post_path(@post))
+  end
 
+  def downvote
+    @post = Post.find(params[:id])
+    vote = @post.votes.new
+    vote.user = current_user
+    vote.value = -1
+    if Vote.find_by(user: current_user, value: 1)
+      Vote.find_by(user: current_user, value: 1).destroy
+    end
+    vote.save
+    redirect_to(post_path(@post))
+  end
 
   def index
     @posts = Post.search(params[:search], misspellings: {edit_distance: 5})

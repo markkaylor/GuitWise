@@ -1,8 +1,27 @@
 class CommentsController < DeviseController
-  def upvote
+
+   def upvote
+    @comment = Comment.find(params[:id])
+    vote = @comment.votes.new
+    vote.user = current_user
+    vote.value = 1
+    if Vote.find_by(user: current_user, value: -1)
+      Vote.find_by(user: current_user, value: -1).destroy
+    end
+    vote.save
+    redirect_to(post_path(@comment.post))
   end
 
   def downvote
+    @comment = Comment.find(params[:id])
+    vote = @comment.votes.new
+    vote.user = current_user
+    vote.value = -1
+    if Vote.find_by(user: current_user, value: 1)
+      Vote.find_by(user: current_user, value: 1).destroy
+    end
+    vote.save
+    redirect_to(post_path(@comment.post))
   end
 
   def create
