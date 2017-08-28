@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   devise_scope :user do
     root to: 'pages#home'
 
-    resources :users,  only: [:show]
+    resources :users,  only: [:show] do
+      resources :follows, only: [ :create ]
+    end
+
+    resources :follows, only: [ :destroy ]
 
     resources :posts, only: [ :new, :create, :index, :show ] do
       resources :comments, only: [:new, :create ] do
