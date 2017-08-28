@@ -1,10 +1,12 @@
 // Specific CSS for your home-page
 #banner{
-  height: 40vh;
+  height: 55vh;
+  min-height: 345px;
   width: auto;
   background-size: cover;
   display: flex;
   background-position: bottom;
+
 }
 
 #typedtext {
@@ -23,6 +25,8 @@
 .banner-message {
   display: block;
   justify-content: center;
+
+
 }
 
 .page-wrapper {
@@ -34,3 +38,9 @@
   padding-bottom: 100px;
 }
 
+.home-form {
+  width: 75%;
+  min-width: 405px;
+  opacity: .9;
+  float: right;
+}
