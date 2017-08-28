@@ -1,10 +1,24 @@
 <div id="banner" style="background-image: linear-gradient(-225deg, rgba(27, 29, 29, 0.68) 0%, rgba(40, 53, 62, 0.6) 50%), url(<%= image_url 'banner.jpg' %>);">
 
-<div class="banner-flex container">
-    <div class="col-sm-offset-1 col-xs-12">
-      <div class="banner-message">
-        <div id="typedtext"></div>
-        <a class="btn btn-transparent" data-toggle="modal" data-target="#postModal">Get Started</a>
+  <div class="banner-flex container">
+      <div class="col-xs-6">
+        <div class="banner-message">
+          <div id="typedtext"></div>
+
+        </div>
+      </div>
+
+      <div class="col-xs-6">
+
+      <div class="home-form">
+        <% if user_signed_in? %>
+            <%= render 'shared/new_post_form' %>
+        <% else %>
+          <div class="buttons">
+            <a class="btn btn-transparent" data-toggle="modal" data-target="#loginModal">Login</a>
+            <a class="btn btn-form" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
