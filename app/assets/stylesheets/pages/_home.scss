@@ -44,3 +44,9 @@
   float: right;
   color: white;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+}
