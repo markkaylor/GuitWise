@@ -13,7 +13,7 @@
             <%= f.input :title, required: true, autofocus: true, label: false, placeholder: "What are you going to ask or talk about?" %>
             <%= f.input :video_url, required: true, label: false, placeholder: "www.youtube.com/myvideo"%>
             <%= f.input :content, label: false, placeholder: "Write some more information about your video if you want" %>
-            <div id="tags" class="form-group">
+            <div class="tags form-group">
               <input type="text" placeholder="Add tags separated by spaces or commas." class="form-control" />
             </div>
             <%= f.input :tag, as: :hidden, label: false %>

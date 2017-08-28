@@ -24,6 +24,15 @@
 
 
   <div class="post-card-right">
+    <div class="post-card-tags">
+      <% if post.tag %>
+        <% post.tag.split(" ").first(5).each do |tg| %>
+          <a href="<%= posts_path(search: tg) %>" class="tags">
+            <span><%= tg %></span>
+          </a>
+        <% end -%>
+      <% end -%>
+    </div>
     <a href="<%= user_path(post.user) %>">
     <div class="post-card-user">
       <div class="post-card-info">
