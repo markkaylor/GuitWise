@@ -2,9 +2,13 @@
   <div class="post-card-container">
     <div class="post-card-left">
         <div class="post-card-votes">
+        <%= link_to upvote_comment_path(comment), method: :post do %>
           <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        <% end %>
           <div class="votes-number"><%= comment.votes_of %></div>
+        <%= link_to downvote_comment_path(comment), method: :post do %>
           <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+        <% end %>
       </div>
   </div>
 
