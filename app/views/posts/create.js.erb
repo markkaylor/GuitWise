@@ -1,0 +1,5 @@
+<% if @post_new.errors.any? %>
+  $('#new_post').html("<%= j render 'posts/post_form' %>")
+<% else %>
+  window.location.replace("<%= post_path(@post_new) %>")
+<% end %>

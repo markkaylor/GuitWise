@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   before_action :store_current_location, unless: :devise_controller?
-
+  before_action :set_post
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
@@ -22,5 +22,9 @@ class ApplicationController < ActionController::Base
     else
       stored_location_for(resource) || request.referer || root_path
     end
+  end
+
+  def set_post
+    @post_new = Post.new
   end
 end

@@ -15,7 +15,7 @@ class CommentsController < DeviseController
     if @comment.save
       redirect_to post_path(@post), :notice => "Your comment has been posted"
     else
-      redirect_to post_path(@post), :notice => "Something went wrong, please try again"
+      redirect_to post_path(@post), :alert => "Something went wrong, please try again"
     end
   end
 
@@ -23,21 +23,11 @@ class CommentsController < DeviseController
     @comment = Comment.new
   end
 
-  def edit
-    @comment = Comment.find(params[:id])
-  end
-
   def update
     @comment = Comment.find(params[:id])
     @comment.update(params[comment_params])
 
     redirect_to post_path(@comment.post_id), :notice => "Your comment has been updated"
-  end
-
-  def destroy
-    @comment = Comment.find(params[:id])
-    @comment.destroy
-    redirect_to post_path, :notice => "Your comment has been deleted!"
   end
 
   private

@@ -1,7 +1,7 @@
 class PostsController < DeviseController
   before_action :set_post, only: [:show, :destroy, :edit, :update]
   skip_before_action :authenticate_user!, only: [ :show, :index ]
-
+  before_action :set_post_new
   # Terminal instructions to start and check the elasticsearch
   # sudo service elasticsearch start
   # tail /var/log/elasticsearch/elasticsearch.log
@@ -21,22 +21,9 @@ class PostsController < DeviseController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.user = current_user
-    if @post.save
-      redirect_to post_path(@post)
-    else
-      redirect_to new_post_path
-    end
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+    @post_new = Post.new(post_params)
+    @post_new.user = current_user
+    @post_new.save
   end
 
   private
@@ -53,5 +40,9 @@ class PostsController < DeviseController
    # Gets the actual resource stored in the instance variable
   def resource
     @user = resource_name.to_s.capitalize.constantize.new
+  end
+
+  def set_post_new
+    @post_new = Post.new
   end
 end
