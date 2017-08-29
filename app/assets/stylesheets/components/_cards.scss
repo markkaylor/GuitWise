@@ -171,7 +171,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.show-post-card-votes {
+  padding-top: 100px;
 }
 
 .show-post-card-answers {
@@ -180,10 +184,6 @@
 
 .show-post-card-answers h6 {
   margin-bottom: 0px;
-}
-
-.show-post-card-votes {
-  margin-top: 135px;
 }
 
 .show-post-card-middle {
@@ -228,10 +228,9 @@
 .show-post-card-user {
   display: flex;
   justify-content: space-around;
-  padding-bottom: 50px;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .show-post-card-user img{
