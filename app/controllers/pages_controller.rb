@@ -1,5 +1,5 @@
 class PagesController < DeviseController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :about]
 
   def home
     @posts = Post.last(10)
@@ -9,6 +9,9 @@ class PagesController < DeviseController
         @follow_posts << Post.find(id)
       end
     end
+  end
+
+  def about
   end
 
   private
