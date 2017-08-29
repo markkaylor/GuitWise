@@ -18,7 +18,6 @@
             <div class="show-post-card-time"><span>Posted</span> <%= time_ago_in_words @post.created_at %> <span>ago</span></div>
           </div>
         </div>
-        <%= social_share_button_tag(@post.title) %>
         <div class="fb-share-button" data-href="<%= request.original_url %>" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F<%= request.original_url %>%2F&amp;src=sdkpreparse">Share</a></div>
       </div>
     </div>
