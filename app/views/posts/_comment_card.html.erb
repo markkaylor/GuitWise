@@ -10,32 +10,35 @@
           <i class="fa fa-thumbs-down" aria-hidden="true"></i>
         <% end %>
       </div>
-  </div>
-
-  <div class="post-card-middle">
-    <div class="post-card-video">
-      <iframe width="400" height="225" src="<%= comment.video_url %>" frameborder="0" allowfullscreen></iframe>
     </div>
-    <div class="post-card-title">
-     <h6><%= comment.content %></h6>
-    </div>
-  </div>
 
-
-  <div class="comment-card-right">
-    <div class="post-card-user">
-      <div class="post-card-info post-card-info-comment">
-      <%= image_tag post_avatar_url(comment) %>
-        <div class="post-card-username post-card-username-comment"><%= comment.user.name %></div>
-        <div class="post-card-time"><span>Posted</span> <%= time_ago_in_words comment.created_at %> <span>ago</span></div>
+    <div class="post-card-middle">
+      <div class="post-card-video">
+        <iframe width="400" height="225" src="<%= comment.video_url %>" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="post-card-title">
+       <h6><%= comment.content %></h6>
       </div>
     </div>
-  </div>
+
+
+    <div class="comment-card-right">
+      <a href="<%= user_path(comment.user) %>">
+      <div class="post-card-user">
+        <div class="post-card-info post-card-info-comment">
+          <%= image_tag post_avatar_url(comment) %>
+          <div class="post-card-username post-card-username-comment">
+            <%= comment.user.name %>
+          </div>
+          <div class="post-card-time">
+            <span>Posted</span> <%= time_ago_in_words comment.created_at %> <span>ago</span>
+          </div>
+        </div>
+      </div>
+      </a>
+    </div>
   </div>
 </div>
-
-
-
 
 
 
