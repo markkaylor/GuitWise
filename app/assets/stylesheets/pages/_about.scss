@@ -1,7 +1,7 @@
 #about-banner {
   color: white;
   text-align: center;
-  height: 65vh;
+  height: 40vh;
   width: auto;
   background-size: cover;
   display: flex;
@@ -59,7 +59,7 @@
 }
 
 .about-card-content {
-  text-align: justify;
+  text-align: left;
   justify-content: start;
   p {
     font-weight: normal;
@@ -80,7 +80,7 @@
   }
 }
 
-.fa {
+.about-card-header .fa {
   font-size: 35px;
   color: black;
   opacity: 0.6;
