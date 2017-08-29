@@ -20,7 +20,10 @@
   align-items: center;
   justify-content: center;
 }
-
+.about-text-section {
+  text-align: justify;
+  line-height: 25px;
+}
 .about-banner-message{
   display: block;
   justify-content: center;
@@ -92,4 +95,20 @@
 .btn {
   width: 100%;
   margin-top: 30px;
+}
+
+.card-image-top {
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  border-radius: 50%;
+  background-position: center;
+  filter: grayscale(100%);
+  border:2px solid white;
+  box-shadow: 0 0 20px rgba(0,0,0,.3);
+  margin:auto;
+}
+
+.card-title {
+  text-align: center;
 }
