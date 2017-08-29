@@ -51,6 +51,10 @@
   justify-content: space-between;
 }
 
+.votes-number {
+  margin-left: 5px;
+}
+
 .post-card-answers {
   margin-bottom: 20px;
 }
@@ -186,6 +190,10 @@
   margin-top: 135px;
 }
 
+.show-votes-number {
+  padding-left: 5px;
+}
+
 .show-post-card-middle {
   width: 75%;
   height: 100%;
@@ -257,4 +265,12 @@
  .post-card-username-comment {
     padding-top: 5px;
     padding-bottom: 2.5px;
+ }
+
+ .post-card-comment-votes {
+  margin-top: 89px;
+ }
+
+ .post-card-container-comment {
+  margin-top: 20px;
  }
