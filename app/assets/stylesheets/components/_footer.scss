@@ -6,6 +6,7 @@
   color: white;
   background: linear-gradient(180deg, $light-gray, $gray);
   width: 100%;
+  min-width: 805px;
   height: 100px;
   display: flex;
   flex-direction: column;

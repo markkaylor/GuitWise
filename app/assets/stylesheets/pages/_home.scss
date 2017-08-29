@@ -2,6 +2,7 @@
 #banner{
   height: calc(90vh - 70px);
   min-height: 345px;
+  min-width: 805px;
   width: auto;
   background-size: cover;
   display: flex;
@@ -32,6 +33,7 @@
 
 .page-wrapper {
   max-width: 1100px;
+  min-width: 805px;
   margin: 0 auto;
   background-color: white;
   align-items: center;
