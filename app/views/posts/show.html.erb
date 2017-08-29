@@ -1,3 +1,7 @@
+<% content_for(:title_tag) do %>
+  <%= @post.title %> | GuitWise
+<% end -%>
+
 <div class="page-wrapper show-page-wrapper">
   <%= render "show_post_card" %>
 
