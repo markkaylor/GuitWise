@@ -36,6 +36,7 @@ class PostsController < DeviseController
 
   def show
     @comment = Comment.new
+    render layout: "post_layout"
   end
 
   def new

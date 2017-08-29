@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:url" content="<%= request.original_url %>" >
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="<%= @post.title %>" />
+    <meta property="og:description" content="<%= @post.user.name %> posted on GuitWise. Check out his video!" />
+    <title><%= yield(:title_tag).blank? ? "GuitWise" : yield(:title_tag) %></title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1717013611937543";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div id="fb-root"></div>
+    <div class="application-wrapper">
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
+    <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
+  </body>
+</html>

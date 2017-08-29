@@ -24,6 +24,7 @@ gem 'omniauth-facebook'
 gem 'algoliasearch-rails'
 gem 'searchkick', '~> 1.3'
 gem 'activejob_backport'
+gem 'social-share-button'
 
 
 group :development, :test do

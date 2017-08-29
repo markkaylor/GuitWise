@@ -1,3 +1,7 @@
+<% content_for(:title_tag) do %>
+  Search | GuitWise
+<% end -%>
+
 <div class="container card" style="padding: 50px; margin-top: 20px;">
   <h2>Search</h2>
   <%= form_tag posts_path, method: "get", class: "form-inline" do %>
