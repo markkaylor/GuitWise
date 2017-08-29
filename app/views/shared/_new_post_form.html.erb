@@ -1,7 +1,7 @@
 <%= simple_form_for(Post.new) do |f| %>
   <div class="form-inputs">
     <%= f.input :title, required: true, autofocus: true, label: false, placeholder: "Ask a question. Give Advice." %>
-    <%= f.input :video_url, required: true, label: false, placeholder: "www.youtube.com/myvideo"%>
+    <%= f.input :video_url, required: true, label: false, placeholder: "Link to youtube or vimeo"%>
     <%= f.input :content, label: false, placeholder: "Fill in the details..." %>
     <div class="tags form-group">
       <input type="text" placeholder="Add some tags." class="form-control" />

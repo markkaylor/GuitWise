@@ -28,6 +28,11 @@ class Post < ApplicationRecord
       self.video_url["https://www.youtube.com/watch?v="] = "" if self.video_url.include? "https://www.youtube.com/watch?v="
       self.video_url = "https://www.youtube.com/embed/#{self.video_url}?rel=0"
     end
+
+    if video_url.include?("vimeo") && (video_url.include?("player") == false)
+      self.video_url = "https://player.vimeo.com/video/#{self.video_url.split('/').last}"
+    end
+
   end
 
   # def post_owner
