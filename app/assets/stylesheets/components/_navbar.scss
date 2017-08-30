@@ -8,6 +8,11 @@
   align-items: center;
   justify-content: space-between;
   min-width: 805px;
+  z-index: 10;
+}
+
+.navbar-transparent {
+  background-color: rgba(0, 0, 0, 1);
 }
 
 .navbar-content {
