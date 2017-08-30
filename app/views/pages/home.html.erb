@@ -1,17 +1,17 @@
 <div id="banner">
 
-<%= video_tag "Guitarist.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
+  <%= video_tag "Guitarist.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
 
   <div class="banner-flex container">
-      <div class="col-xs-12 col-sm-6">
-        <div class="banner-message">
-          <h3 class="message-1">Ask the community</h3>
-          <h3 class="message-2">Share your knowledge</h3>
-          <h3 class="message-3">Learn guitar together</h3>
-        </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="banner-message">
+        <h3 class="message-1">Ask the community</h3>
+        <h3 class="message-2">Share your knowledge</h3>
+        <h3 class="message-3">Learn guitar together</h3>
       </div>
+    </div>
 
-      <div class="col-xs-12 col-sm-6">
+    <div class="col-xs-12 col-sm-6">
 
       <div class="home-form">
         <% if user_signed_in? %>

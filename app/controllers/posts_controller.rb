@@ -51,7 +51,7 @@ class PostsController < DeviseController
     if @post.save
       redirect_to post_path(@post)
     else
-      redirect_to new_post_path
+      redirect_to root_path, alert: "There was an error with your post. Please try again."
     end
   end
 
