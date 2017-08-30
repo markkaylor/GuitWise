@@ -1,43 +1,36 @@
 <div id="banner">
 
   <%= video_tag "Guitarist.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
-
+  <div class="banner-message">
+    <h3 class="message-1">Ask the community</h3>
+    <h3 class="message-2">Share your knowledge</h3>
+    <h3 class="message-3">Learn guitar together</h3>
+  </div>
   <div class="banner-flex container">
-    <div class="col-xs-12 col-sm-6">
-      <div class="banner-message">
-        <h3 class="message-1">Ask the community</h3>
-        <h3 class="message-2">Share your knowledge</h3>
-        <h3 class="message-3">Learn guitar together</h3>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-
-      <div class="home-form">
-        <% if user_signed_in? %>
-          <%= simple_form_for(Post.new) do |f| %>
-            <div class="form-inputs home-form-1 show">
-              <ul class="list-inline">
-                <li class="col-xs-10">
-                  <%= f.input :title, required: true, autofocus: true, label: false, placeholder: "Ask a question here.", input_html: {}  %>
-                </li>
-                <li class="col-xs-2"><%= image_tag "", class: "fa fa-arrow-right" %></li>
-              </ul>
-            </div>
-            <div class="form-inputs home-form-2 hidden">
-              <ul class="list-inline">
-                <li class="col-xs-10"><%= f.input :video_url, required: true, label: false, placeholder: "Link to youtube or vimeo" , input_html: {} %></li>
-                <li class="col-xs-2"><%= button_tag "", class: "fa fa-arrow-right" %></li>
-              </ul>
-            </div>
-          <% end -%>
-        <% else %>
-          <div class="buttons">
-            <a class="btn btn-transparent" data-toggle="modal" data-target="#loginModal">Login</a>
-            <a class="btn btn-form" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+    <div class="home-form">
+      <% if user_signed_in? %>
+        <%= simple_form_for(Post.new) do |f| %>
+          <div class="form-inputs home-form-1 show">
+            <ul class="list-inline">
+              <li class="col-xs-11">
+                <%= f.input :title, required: true, autofocus: true, label: false, placeholder: "Ask a question here.", input_html: {}  %>
+              </li>
+              <li class="col-xs-1"><%= image_tag "", class: "fa fa-arrow-right" %></li>
+            </ul>
           </div>
-        <% end %>
-      </div>
+          <div class="form-inputs home-form-2 hidden">
+            <ul class="list-inline">
+              <li class="col-xs-11"><%= f.input :video_url, required: true, label: false, placeholder: "Link to youtube or vimeo" , input_html: {} %></li>
+              <li class="col-xs-1"><%= button_tag "", class: "fa fa-arrow-right" %></li>
+            </ul>
+          </div>
+        <% end -%>
+      <% else %>
+        <div class="buttons">
+          <a class="btn btn-transparent" data-toggle="modal" data-target="#loginModal">Login</a>
+          <a class="btn btn-form" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
