@@ -3,8 +3,9 @@
   <div class="banner-flex container">
       <div class="col-xs-12 col-sm-6">
         <div class="banner-message">
-          <h1>Welcome to GuitWise</h1>
-          <h6>GuitWise is an online learning community where guitarists can use videos to share their practice, benefit from the knowledge of others, and ultimately become better musicians.</h6>
+          <h2 class="message-1">Post questions about the music you are learning</h2>
+          <h2 class="message-2">Share your knowdledge with a short tutorial</h2>
+          <h2 class="message-3">Respoond with videos to give feedback or show your pgress</h2>
         </div>
       </div>
 
@@ -21,7 +22,6 @@
                 </li>
                 <li class="col-xs-2"><%= button_tag "", class: "fa fa-arrow-right first" %></li>
               </ul>
-
 
 
             </div>
@@ -101,5 +101,17 @@
     $('#input-1').addClass('hidden');
     $('#input-2').removeClass('hidden');
   });
+</script>
+
+<script>
+$(document).ready(function(){
+  $('.message-1').hide(0).delay(500).fadeIn(3000)
+  $('.message-1').fadeOut(3000)
+  $('.message-2').hide(0).delay(6500).fadeIn(3000)
+  $('.message-2').fadeOut(3000)
+  $('.message-3').hide(0).delay(12500).fadeIn(3000)
+  $('.message-3').fadeOut(3000)
+
+});
 </script>
 <% end %>
