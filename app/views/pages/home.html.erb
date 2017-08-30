@@ -1,11 +1,13 @@
-<div id="banner" style="background-image: linear-gradient(-225deg, rgba(27, 29, 29, 1) 0%, rgba(40, 53, 62, 0.6) 80%), url(<%= image_url 'banner.jpg' %>);">
+<div id="banner">
+
+<%= video_tag "Guitarist.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
 
   <div class="banner-flex container">
       <div class="col-xs-12 col-sm-6">
         <div class="banner-message">
-          <h2 class="message-1">Post questions about the music you are learning</h2>
-          <h2 class="message-2">Share your knowdledge with a short tutorial</h2>
-          <h2 class="message-3">Respoond with videos to give feedback or show your pgress</h2>
+          <h3 class="message-1">Ask the community</h3>
+          <h3 class="message-2">Share your knowledge</h3>
+          <h3 class="message-3">Learn guitar together</h3>
         </div>
       </div>
 
@@ -104,14 +106,14 @@
 </script>
 
 <script>
-$(document).ready(function(){
-  $('.message-1').hide(0).delay(500).fadeIn(3000)
-  $('.message-1').fadeOut(3000)
-  $('.message-2').hide(0).delay(6500).fadeIn(3000)
-  $('.message-2').fadeOut(3000)
-  $('.message-3').hide(0).delay(12500).fadeIn(3000)
-  $('.message-3').fadeOut(3000)
-
-});
+  $(document).ready(function(){
+    function messages(){
+    $('.message-1').delay(500).fadeIn(2250).fadeOut(2250)
+    $('.message-2').delay(5000).fadeIn(2250).fadeOut(2250)
+    $('.message-3').delay(9500).fadeIn(2250).fadeOut(2250)
+    }
+    messages()
+    setInterval(messages, 14000);
+  });
 </script>
 <% end %>
