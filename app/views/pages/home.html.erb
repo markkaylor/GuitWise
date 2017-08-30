@@ -94,15 +94,16 @@
 
 <%= render 'posts/new' %>
 
-<script>
-  $(document).ready(function(){
-    function messages(){
-    $('.message-1').delay(500).fadeIn(2250).fadeOut(2250)
-    $('.message-2').delay(5000).fadeIn(2250).fadeOut(2250)
-    $('.message-3').delay(9500).fadeIn(2250).fadeOut(2250)
-    }
-    messages()
-    setInterval(messages, 14000);
-  });
-</script>
+<% content_for :after_js do %>
+  <script>
+    $(document).ready(function(){
+      function messages(){
+      $('.message-1').delay(500).fadeIn(2250).fadeOut(2250)
+      $('.message-2').delay(5000).fadeIn(2250).fadeOut(2250)
+      $('.message-3').delay(9500).fadeIn(2250).fadeOut(2250)
+      }
+      messages()
+      setInterval(messages, 14000);
+    });
+  </script>
 <% end %>
