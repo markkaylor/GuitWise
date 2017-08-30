@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 #banner{
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
+  position: relative;
   height: calc(100vh);
   min-height: 345px;
   min-width: 805px;
@@ -37,6 +37,18 @@ input.red-border {
   transform: scaleX(1);
 }
 
+.video {
+   position: absolute;
+   top: 50%; left: 50%;
+   min-width: 100%;
+   min-height: 100%;
+   z-index: -1;
+   width: auto;
+   height: auto;
+   transform: translate(-50%, -50%);
+   background-size: cover;
+}
+
 #typedtext {
   margin: 0;
   line-height: 24px;
@@ -56,12 +68,10 @@ input.red-border {
   color: white;
   opacity: .7;
   text-align: left;
-  h1 {
-    font-weight: bolder;
-  }
-  h4 {
-    font-weight: lighter;
-  }
+ h3 {
+  display: none;
+  text-shadow: 1px 1px 2px black;
+ }
 }
 
 .page-wrapper {

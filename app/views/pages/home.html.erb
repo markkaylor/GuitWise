@@ -1,10 +1,13 @@
-<div id="banner" style="background-image: linear-gradient(-225deg, rgba(27, 29, 29, 1) 0%, rgba(40, 53, 62, 0.6) 80%), url(<%= image_url 'banner.jpg' %>);">
+<div id="banner">
+
+<%= video_tag "Guitarist.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
 
   <div class="banner-flex container">
       <div class="col-xs-12 col-sm-6">
         <div class="banner-message">
-          <h1>Welcome to GuitWise</h1>
-          <h6>GuitWise is an online learning community where guitarists can use videos to share their practice, benefit from the knowledge of others, and ultimately become better musicians.</h6>
+          <h3 class="message-1">Ask the community</h3>
+          <h3 class="message-2">Share your knowledge</h3>
+          <h3 class="message-3">Learn guitar together</h3>
         </div>
       </div>
 
@@ -90,3 +93,16 @@
 </div>
 
 <%= render 'posts/new' %>
+
+<script>
+  $(document).ready(function(){
+    function messages(){
+    $('.message-1').delay(500).fadeIn(2250).fadeOut(2250)
+    $('.message-2').delay(5000).fadeIn(2250).fadeOut(2250)
+    $('.message-3').delay(9500).fadeIn(2250).fadeOut(2250)
+    }
+    messages()
+    setInterval(messages, 14000);
+  });
+</script>
+<% end %>
