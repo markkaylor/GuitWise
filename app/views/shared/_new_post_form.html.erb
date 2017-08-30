@@ -1,14 +1,14 @@
 <%= simple_form_for(Post.new) do |f| %>
   <div class="form-inputs">
-    <%= f.input :title, required: true, autofocus: true, label: false, placeholder: "Ask a question. Give Advice." %>
+    <%= f.input :title, required: true, autofocus: true, label: false, placeholder: "Ask a question." %>
     <%= f.input :video_url, required: true, label: false, placeholder: "Link to youtube or vimeo"%>
-    <%= f.input :content, label: false, placeholder: "Fill in the details..." %>
+    <%= f.input :content, label: false, placeholder: "Description..." %>
     <div class="tags form-group">
       <input type="text" placeholder="Add some tags." class="form-control" />
     </div>
     <%= f.input :tag, as: :hidden, label: false %>
   </div>
   <div class="form-actions">
-    <%= f.submit "Share your progress", class: "btn btn-form" %>
+    <%= f.submit "Ask the community", class: "btn btn-form" %>
   </div>
 <% end -%>
