@@ -25,6 +25,7 @@ gem 'algoliasearch-rails'
 gem 'searchkick', '~> 1.3'
 gem 'activejob_backport'
 gem 'social-share-button'
+gem 'jquery-ui-rails', '~> 5.0.5'
 
 
 group :development, :test do

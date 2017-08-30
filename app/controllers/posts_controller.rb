@@ -45,11 +45,13 @@ class PostsController < DeviseController
 
   def create
     @post = Post.new(post_params)
+    @post.content = "" unless @post.content
+    @post.tag = "" unless @post.tag
     @post.user = current_user
     if @post.save
       redirect_to post_path(@post)
     else
-      redirect_to new_post_path
+      redirect_to root_path, alert: "There was an error with your post. Please try again."
     end
   end
 
