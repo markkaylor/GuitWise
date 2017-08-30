@@ -7,11 +7,12 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= favicon_link_tag 'guitwiselogo.png', type: "image/png" %>
   </head>
   <body>
+    <%= render 'shared/flashes' %>
     <div class="application-wrapper">
       <%= render 'shared/navbar' %>
-      <%= render 'shared/flashes' %>
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>

@@ -21,11 +21,20 @@
     color: $green;
     margin: 15px 0;
   }
-  // .list-inline {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  // }
+}
+
+.home-form-1, .home-form-2 {
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: all ease 0.25s;
+}
+
+input.red-border {
+  border-bottom: 3px solid $red !important;
+}
+
+.show {
+  transform: scaleX(1);
 }
 
 .video {
