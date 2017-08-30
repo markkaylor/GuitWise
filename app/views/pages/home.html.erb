@@ -13,20 +13,19 @@
       <div class="home-form">
         <% if user_signed_in? %>
           <%= simple_form_for(Post.new) do |f| %>
-            <div class="form-inputs">
+            <div class="form-inputs home-form-1">
               <ul class="list-inline">
                 <li class="col-xs-10">
-                  <%= f.input :title, required: true, autofocus: true, label: false, placeholder: "Ask a question here.", input_html: { class: "active",  id: "input-1"}  %>
-                  <%= f.input :video_url, required: true, label: false, placeholder: "Link to youtube or vimeo" , input_html: { class: "hidden", id: "input-2"} %>
+                  <%= f.input :title, required: true, autofocus: true, label: false, placeholder: "Ask a question here.", input_html: {}  %>
                 </li>
-                <li class="col-xs-2"><%= button_tag "", class: "fa fa-arrow-right first" %></li>
+                <li class="col-xs-2"><%= button_tag "", class: "fa fa-arrow-right" %></li>
               </ul>
-
-
-
             </div>
-            <div class="form-actions">
-              <%= f.submit "Ask the community", class: "btn btn-form", class: "hidden" %>
+            <div class="form-inputs home-form-2 hidden">
+              <ul class="list-inline">
+                <li class="col-xs-10"><%= f.input :video_url, required: true, label: false, placeholder: "Link to youtube or vimeo" , input_html: {} %></li>
+                <li class="col-xs-2"><%= button_tag "", class: "fa fa-arrow-right" %></li>
+              </ul>
             </div>
           <% end -%>
         <% else %>
@@ -91,15 +90,3 @@
 </div>
 
 <%= render 'posts/new' %>
-<% content_for :after_js do %>
-<script>
-  $('.form-inputs .fa.first').on('click', function(event) {
-    event.preventDefault();
-  //   $('.active').addClass('hidden').next().addClass('active').removeClass('hidden');
-  // })
-    $('.form-inputs .fa').removeClass('first');
-    $('#input-1').addClass('hidden');
-    $('#input-2').removeClass('hidden');
-  });
-</script>
-<% end %>

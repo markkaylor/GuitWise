@@ -45,6 +45,8 @@ class PostsController < DeviseController
 
   def create
     @post = Post.new(post_params)
+    @post.content = "" unless @post.content
+    @post.tag = "" unless @post.tag
     @post.user = current_user
     if @post.save
       redirect_to post_path(@post)
