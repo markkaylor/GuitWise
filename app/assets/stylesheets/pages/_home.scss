@@ -2,7 +2,7 @@
 #banner {
   position: relative;
   height: 100vh;
-  min-height: 345px;
+  min-height: 810px;
   min-width: 805px;
   width: auto;
   background-size: cover;
@@ -46,6 +46,7 @@ input.red-border {
    z-index: -5;
    width: auto;
    height: auto;
+   transform: translate(-50%, -50%);
    background-size: cover;
 }
 
@@ -72,8 +73,12 @@ input.red-border {
   margin: 0 auto;
   background-color: white;
   align-items: center;
-  padding-top: 70px;
+  margin-top: 20px;
+  padding-top: 10px;
   padding-bottom: 100px;
+  h4{
+    margin-bottom: 2px;
+  }
 }
 
 .home-form {
