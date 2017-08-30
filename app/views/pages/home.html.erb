@@ -13,12 +13,12 @@
       <div class="home-form">
         <% if user_signed_in? %>
           <%= simple_form_for(Post.new) do |f| %>
-            <div class="form-inputs home-form-1">
+            <div class="form-inputs home-form-1 show">
               <ul class="list-inline">
                 <li class="col-xs-10">
                   <%= f.input :title, required: true, autofocus: true, label: false, placeholder: "Ask a question here.", input_html: {}  %>
                 </li>
-                <li class="col-xs-2"><%= button_tag "", class: "fa fa-arrow-right" %></li>
+                <li class="col-xs-2"><%= image_tag "", class: "fa fa-arrow-right" %></li>
               </ul>
             </div>
             <div class="form-inputs home-form-2 hidden">
