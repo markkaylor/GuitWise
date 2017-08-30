@@ -81,6 +81,7 @@
   </div>
 </div>
 <div class="page-wrapper">
+<div class="col-sm-offset-2"><h3>Popular Videos</h3></div>
 <% if current_user && @follow_posts.any? %>
   <% @follow_posts.reverse.each do |post| %>
     <%= render 'shared/post_card', post: post %>

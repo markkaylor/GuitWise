@@ -1,12 +1,12 @@
 // Specific CSS for your home-page
 #banner{
   position: relative;
-  height: calc(100vh);
+  height: 100vh;
   min-height: 345px;
   min-width: 805px;
   width: auto;
   background-size: cover;
-  margin-top: -70px;
+
   display: flex;
   background-position: bottom;
   input {
@@ -40,14 +40,6 @@
    background-size: cover;
 }
 
-#typedtext {
-  margin: 0;
-  line-height: 24px;
-  color: white;
-  opacity: .9;
-  height: 72px;
-}
-
 .banner-flex {
   display: flex;
   align-items: center;
@@ -71,7 +63,7 @@
   margin: 0 auto;
   background-color: white;
   align-items: center;
-  padding-top: 70px;
+  padding-top: 20px;
   padding-bottom: 100px;
 }
 
