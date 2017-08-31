@@ -2,9 +2,10 @@
 
   <%= video_tag "Guitarist.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
   <div class="banner-message">
-    <h3 class="message-1">Ask the community</h3>
-    <h3 class="message-2">Share your knowledge</h3>
-    <h3 class="message-3">Learn guitar together</h3>
+    <h3 class="message-1">Learn guitar together</h3>
+    <h3 class="message-2">Post a video</h3>
+    <h3 class="message-3">Ask the community</h3>
+    <h3 class="message-4">Share your knowledge</h3>
   </div>
   <div class="banner-flex container">
     <div class="home-form">
@@ -54,9 +55,10 @@
   <script>
     $(document).ready(function(){
       function messages(){
-      $('.message-1').delay(500).fadeIn(2250).fadeOut(2250)
-      $('.message-2').delay(5000).fadeIn(2250).fadeOut(2250)
-      $('.message-3').delay(9500).fadeIn(2250).fadeOut(2250)
+      $('.message-1').delay(496).fadeIn(1688).fadeOut(1688)
+      $('.message-2').delay(3872).fadeIn(1688).fadeOut(1688)
+      $('.message-3').delay(7248).fadeIn(1688).fadeOut(1688)
+      $('.message-4').delay(10624).fadeIn(1688).fadeOut(1688)
       }
       messages()
       setInterval(messages, 14000);
