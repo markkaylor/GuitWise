@@ -40,17 +40,29 @@
   </div>
 </div>
 
-<div class="page-wrapper">
-<div class="col-sm-offset-2"><h4>Recent Videos</h4></div>
-<% if current_user && @follow_posts.any? %>
-  <% @follow_posts.reverse.each do |post| %>
-    <%= render 'shared/post_card', post: post %>
-  <% end -%>
-<% else %>
-  <% @posts.reverse.each do |post|  %>
-      <%= render 'shared/post_card', post: post %>
-  <% end %>
-<% end -%>
+<div class="page-wrapper text-center">
+  <div class="tabs">
+    <a class="tab <%= 'active' if current_user && @follow_posts.any? %>" data-target="#followed-posts">Followed Recent Posts</a>
+    <a class="tab <%= 'active' unless current_user && @follow_posts.any? %>" data-target="#all-posts">Worldwide Recent Posts</a>
+  </div>
+    <div id="followed-posts" class="user-sections <%= 'hidden' unless current_user && @follow_posts.any? %>">
+      <% unless current_user %>
+        <h4>Log in or sign up to easily access guitarists you are a fan of.</h4>
+      <% else %>
+        <% if @follow_posts.any? %>
+          <% @follow_posts.each do |post| %>
+            <%= render 'shared/post_card', post: post %>
+          <% end -%>
+        <% else %>
+          <h4>Follow more people to see their videos.</h4>
+        <% end -%>
+      <% end -%>
+    </div>
+    <div id="all-posts" class="user-sections <%= 'hidden' if current_user && @follow_posts.any? %>">
+      <% @posts.reverse.each do |post|  %>
+          <%= render 'shared/post_card', post: post %>
+      <% end %>
+    </div>
 </div>
 
 <%= render 'posts/new' %>
