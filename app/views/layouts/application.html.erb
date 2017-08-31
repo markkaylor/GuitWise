@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:url" content="<%= request.original_url %>" >
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<%= yield(:title_tag).blank? ? "GuitWise" : yield(:title_tag) %>" />
     <title><%= yield(:title_tag).blank? ? "GuitWise" : yield(:title_tag) %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= favicon_link_tag 'guitwiselogo.png', type: "image/png" %>
+    <%= favicon_link_tag 'favicon.ico' %>
   </head>
   <body>
     <%= render 'shared/flashes' %>
