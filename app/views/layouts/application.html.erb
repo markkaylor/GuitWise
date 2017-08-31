@@ -6,6 +6,7 @@
     <meta property="og:url" content="<%= request.original_url %>" >
     <meta property="og:type" content="website" />
     <meta property="og:title" content="<%= yield(:title_tag).blank? ? "GuitWise" : yield(:title_tag) %>" />
+    <meta property="og:image" content="<%= image_path 'images/banner.jpg' %>">
     <title><%= yield(:title_tag).blank? ? "GuitWise" : yield(:title_tag) %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
