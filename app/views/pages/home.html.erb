@@ -42,8 +42,8 @@
 
 <div class="page-wrapper text-center">
   <div class="tabs">
-    <a class="tab <%= 'active' if current_user && @follow_posts.any? %>" data-target="#followed-posts">Followed Recent Posts</a>
-    <a class="tab <%= 'active' unless current_user && @follow_posts.any? %>" data-target="#all-posts">Worldwide Recent Posts</a>
+    <a class="tab <%= 'active' if current_user && @follow_posts.any? %>" data-target="#followed-posts">Following</a>
+    <a class="tab <%= 'active' unless current_user && @follow_posts.any? %>" data-target="#all-posts">All</a>
   </div>
     <div id="followed-posts" class="user-sections <%= 'hidden' unless current_user && @follow_posts.any? %>">
       <% unless current_user %>
