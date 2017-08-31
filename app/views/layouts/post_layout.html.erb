@@ -6,7 +6,7 @@
     <meta property="og:url" content="<%= request.original_url %>" >
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<%= @post.title %>" />
-    <meta property="og:image" content="<%= image_path 'images/banner.jpg' %>">
+    <meta property="og:image" content="<%= image_path 'banner.jpg' %>">
     <meta property="og:description" content="<%= @post.user.name %> posted on GuitWise. Check out his video!" />
     <title><%= yield(:title_tag).blank? ? "GuitWise" : yield(:title_tag) %></title>
     <%= csrf_meta_tags %>
