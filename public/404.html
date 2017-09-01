@@ -61,6 +61,50 @@
       text-decoration: none;
       color: #EEEEEE;
     }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    td {
+      height: 80px;
+      width: 10px;
+      padding: 0;
+      margin: 0;
+    }
+    .top-left {
+      border-left: 1px solid #AAAAAA;
+      background-color: white;
+    }
+    .top-middle {
+      background-color: white;
+    }
+    .top-right {
+      border-right: 1px solid #AAAAAA;
+      background-color: white;
+    }
+    .btop-left {
+      background-color: #333333;
+    }
+    .btop-right {
+      background-color: #333333;
+    }
+    .bot-left {
+      background-color: white;
+      border-left: 1px solid #AAA;
+      border-bottom: 1px solid #AAA;
+    }
+    .bot-middle {
+      background-color: white;
+      border-bottom: 1px solid #AAA;
+    }
+    .bot-right {
+      background-color: white;
+      border-right: 1px solid #AAA;
+      border-bottom: 1px solid #AAA;
+    }
+    .background-grey {
+      background-color: #CCC;
+    }
   </style>
 </head>
 <body>
@@ -80,33 +124,68 @@
     <p style="font-size: 18px; margin-bottom: 30px;">Use your keyboard to play music.</p>
     <table>
       <tr>
-        <td class=></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td class="top-left C4"></td>
+        <td class="top-middle C4"></td>
+        <td class="btop-left C4sharp"></td>
+        <td class="btop-right C4sharp"></td>
+        <td class="top-middle D4"></td>
+        <td class="btop-left D4sharp"></td>
+        <td class="btop-right D4sharp"></td>
+        <td class="top-middle E4"></td>
+        <td class="top-right E4"></td>
+        <td class="top-left F4"></td>
+        <td class="top-middle F4"></td>
+        <td class="btop-left F4sharp"></td>
+        <td class="btop-right F4sharp"></td>
+        <td class="top-middle G4"></td>
+        <td class="btop-left G4sharp"></td>
+        <td class="btop-right G4sharp"></td>
+        <td class="top-middle A4"></td>
+        <td class="btop-left A4sharp"></td>
+        <td class="btop-right A4sharp"></td>
+        <td class="top-middle B4"></td>
+        <td class="top-right B4"></td>
+        <td class="top-left C5"></td>
+        <td class="top-middle C5"></td>
+        <td class="btop-left C5sharp"></td>
+        <td class="btop-right C5sharp"></td>
+        <td class="top-middle D5"></td>
+        <td class="btop-left D5sharp"></td>
+        <td class="btop-right D5sharp"></td>
+        <td class="top-middle E5"></td>
+        <td class="top-right E5"></td>
+      </tr>
+      <tr>
+        <td class="bot-left C4"></td>
+        <td class="bot-middle C4"></td>
+        <td class="bot-right C4"></td>
+        <td class="bot-left D4"></td>
+        <td class="bot-middle D4"></td>
+        <td class="bot-right D4"></td>
+        <td class="bot-left E4"></td>
+        <td class="bot-middle E4"></td>
+        <td class="bot-right E4"></td>
+        <td class="bot-left F4"></td>
+        <td class="bot-middle F4"></td>
+        <td class="bot-right F4"></td>
+        <td class="bot-left G4"></td>
+        <td class="bot-middle G4"></td>
+        <td class="bot-right G4"></td>
+        <td class="bot-left A4"></td>
+        <td class="bot-middle A4"></td>
+        <td class="bot-right A4"></td>
+        <td class="bot-left B4"></td>
+        <td class="bot-middle B4"></td>
+        <td class="bot-right B4"></td>
+        <td class="bot-left C5"></td>
+        <td class="bot-middle C5"></td>
+        <td class="bot-right C5"></td>
+        <td class="bot-left D5"></td>
+        <td class="bot-middle D5"></td>
+        <td class="bot-right D5"></td>
+        <td class="bot-left E5"></td>
+        <td class="bot-middle E5"></td>
+        <td class="bot-right E5"></td>
       </tr>
     </table>
   </div>
@@ -162,15 +241,29 @@
     <audio controls id="A3">
       <source src="assets/A3.mp3" type="audio/mpeg">
     </audio>
+    <audio controls id="C5sharp">
+      <source src="assets/C5sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="D5sharp">
+      <source src="assets/D5sharp.mp3" type="audio/mpeg">
+    </audio>
   </div>
   <script type="text/javascript">
     function playAudio(id) {
       document.getElementById(id).play();
+      var ele = document.getElementsByClassName(id);
+      for (var i = 0; i < ele.length; i++) {
+        ele[i].classList.add("background-grey");
+      }
     };
 
     function pauseAudio(id) {
       document.getElementById(id).pause();
       document.getElementById(id).currentTime = 0;
+      var ele = document.getElementsByClassName(id);
+      for (var i = 0; i < ele.length; i++) {
+        ele[i].classList.remove("background-grey");
+      }
     };
 
     $(document).ready(function() {
@@ -215,12 +308,18 @@
           playAudio("C5");
         };
         if (ev.keyCode == 88) {
-          playAudio("D5");
+          playAudio("C5sharp");
         };
         if (ev.keyCode == 67) {
-          playAudio("E5");
+          playAudio("D5");
         };
         if (ev.keyCode == 86) {
+          playAudio("D5sharp");
+        };
+        if (ev.keyCode == 66) {
+          playAudio("E5");
+        };
+        if (ev.keyCode == 20) {
           playAudio("A3");
         };
         if(ev.keyCode == 48) {
@@ -283,12 +382,18 @@
           pauseAudio("C5");
         };
         if (ev.keyCode == 88) {
-          pauseAudio("D5");
+          pauseAudio("C5sharp");
         };
         if (ev.keyCode == 67) {
-          pauseAudio("E5");
+          pauseAudio("D5");
         };
         if (ev.keyCode == 86) {
+          pauseAudio("D5sharp");
+        };
+        if (ev.keyCode == 66) {
+          pauseAudio("E5");
+        };
+        if (ev.keyCode == 20) {
           pauseAudio("A3");
         };
         if(ev.keyCode == 48) {

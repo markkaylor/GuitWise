@@ -3,6 +3,7 @@
 <head>
   <title>Oops, something broke</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <style>
     body {
       background-color: #EEEEEE;
@@ -60,6 +61,50 @@
       text-decoration: none;
       color: #EEEEEE;
     }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    td {
+      height: 80px;
+      width: 10px;
+      padding: 0;
+      margin: 0;
+    }
+    .top-left {
+      border-left: 1px solid #AAAAAA;
+      background-color: white;
+    }
+    .top-middle {
+      background-color: white;
+    }
+    .top-right {
+      border-right: 1px solid #AAAAAA;
+      background-color: white;
+    }
+    .btop-left {
+      background-color: #333333;
+    }
+    .btop-right {
+      background-color: #333333;
+    }
+    .bot-left {
+      background-color: white;
+      border-left: 1px solid #AAA;
+      border-bottom: 1px solid #AAA;
+    }
+    .bot-middle {
+      background-color: white;
+      border-bottom: 1px solid #AAA;
+    }
+    .bot-right {
+      background-color: white;
+      border-right: 1px solid #AAA;
+      border-bottom: 1px solid #AAA;
+    }
+    .background-grey {
+      background-color: #CCC;
+    }
   </style>
 </head>
 <body>
@@ -75,10 +120,302 @@
     <p>by going to <a href="/">home</a> or <a href="/users/sign_in">sign in</a>.</p>
   </div>
   <div class="error-game error-banner">
-    <h4>Make some music with Typatone!</h4>
-    <p>Don't stop making music just because something broke.</p>
-    <p>Click the keyboard before you start typing messages that make music.</p>
-    <iframe src="//typatone.com" width="500" height="270" frameborder="0" border="0" style="margin-top: 10px;"></iframe>
+    <h2>Don't stop making music just because something broke.</h2>
+    <p style="font-size: 18px; margin-bottom: 30px;">Use your keyboard to play music.</p>
+    <table>
+      <tr>
+        <td class="top-left C4"></td>
+        <td class="top-middle C4"></td>
+        <td class="btop-left C4sharp"></td>
+        <td class="btop-right C4sharp"></td>
+        <td class="top-middle D4"></td>
+        <td class="btop-left D4sharp"></td>
+        <td class="btop-right D4sharp"></td>
+        <td class="top-middle E4"></td>
+        <td class="top-right E4"></td>
+        <td class="top-left F4"></td>
+        <td class="top-middle F4"></td>
+        <td class="btop-left F4sharp"></td>
+        <td class="btop-right F4sharp"></td>
+        <td class="top-middle G4"></td>
+        <td class="btop-left G4sharp"></td>
+        <td class="btop-right G4sharp"></td>
+        <td class="top-middle A4"></td>
+        <td class="btop-left A4sharp"></td>
+        <td class="btop-right A4sharp"></td>
+        <td class="top-middle B4"></td>
+        <td class="top-right B4"></td>
+        <td class="top-left C5"></td>
+        <td class="top-middle C5"></td>
+        <td class="btop-left C5sharp"></td>
+        <td class="btop-right C5sharp"></td>
+        <td class="top-middle D5"></td>
+        <td class="btop-left D5sharp"></td>
+        <td class="btop-right D5sharp"></td>
+        <td class="top-middle E5"></td>
+        <td class="top-right E5"></td>
+      </tr>
+      <tr>
+        <td class="bot-left C4"></td>
+        <td class="bot-middle C4"></td>
+        <td class="bot-right C4"></td>
+        <td class="bot-left D4"></td>
+        <td class="bot-middle D4"></td>
+        <td class="bot-right D4"></td>
+        <td class="bot-left E4"></td>
+        <td class="bot-middle E4"></td>
+        <td class="bot-right E4"></td>
+        <td class="bot-left F4"></td>
+        <td class="bot-middle F4"></td>
+        <td class="bot-right F4"></td>
+        <td class="bot-left G4"></td>
+        <td class="bot-middle G4"></td>
+        <td class="bot-right G4"></td>
+        <td class="bot-left A4"></td>
+        <td class="bot-middle A4"></td>
+        <td class="bot-right A4"></td>
+        <td class="bot-left B4"></td>
+        <td class="bot-middle B4"></td>
+        <td class="bot-right B4"></td>
+        <td class="bot-left C5"></td>
+        <td class="bot-middle C5"></td>
+        <td class="bot-right C5"></td>
+        <td class="bot-left D5"></td>
+        <td class="bot-middle D5"></td>
+        <td class="bot-right D5"></td>
+        <td class="bot-left E5"></td>
+        <td class="bot-middle E5"></td>
+        <td class="bot-right E5"></td>
+      </tr>
+    </table>
   </div>
+  <div style="display: none;">
+    <audio controls id="A4">
+      <source src="assets/A4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="A4sharp">
+      <source src="assets/A4sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="B4">
+      <source src="assets/B4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="C4">
+      <source src="assets/C4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="C4sharp">
+      <source src="assets/C4sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="D4">
+      <source src="assets/D4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="D4sharp">
+      <source src="assets/D4sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="E4">
+      <source src="assets/E4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="F4">
+      <source src="assets/F4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="F4sharp">
+      <source src="assets/F4sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="G4">
+      <source src="assets/G4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="G4sharp">
+      <source src="assets/G4sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="C5">
+      <source src="assets/C5.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="B3">
+      <source src="assets/B3.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="D5">
+      <source src="assets/D5.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="E5">
+      <source src="assets/E5.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="A3">
+      <source src="assets/A3.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="C5sharp">
+      <source src="assets/C5sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="D5sharp">
+      <source src="assets/D5sharp.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <script type="text/javascript">
+    function playAudio(id) {
+      document.getElementById(id).play();
+      var ele = document.getElementsByClassName(id);
+      for (var i = 0; i < ele.length; i++) {
+        ele[i].classList.add("background-grey");
+      }
+    };
+
+    function pauseAudio(id) {
+      document.getElementById(id).pause();
+      document.getElementById(id).currentTime = 0;
+      var ele = document.getElementsByClassName(id);
+      for (var i = 0; i < ele.length; i++) {
+        ele[i].classList.remove("background-grey");
+      }
+    };
+
+    $(document).ready(function() {
+      $(document).keydown(function(ev) {
+        if (ev.keyCode == 65) {
+          playAudio("C4");
+        };
+        if (ev.keyCode == 87) {
+          playAudio("C4sharp");
+        };
+        if (ev.keyCode == 83) {
+          playAudio("D4");
+        };
+        if (ev.keyCode == 69) {
+          playAudio("D4sharp");
+        };
+        if (ev.keyCode == 68) {
+          playAudio("E4");
+        };
+        if (ev.keyCode == 70) {
+          playAudio("F4");
+        };
+        if (ev.keyCode == 84) {
+          playAudio("F4sharp");
+        };
+        if (ev.keyCode == 71) {
+          playAudio("G4");
+        };
+        if (ev.keyCode == 89) {
+          playAudio("G4sharp");
+        };
+        if (ev.keyCode == 72) {
+          playAudio("A4");
+        };
+        if (ev.keyCode == 85) {
+          playAudio("A4sharp");
+        };
+        if (ev.keyCode == 74) {
+          playAudio("B4");
+        };
+        if (ev.keyCode == 90) {
+          playAudio("C5");
+        };
+        if (ev.keyCode == 88) {
+          playAudio("C5sharp");
+        };
+        if (ev.keyCode == 67) {
+          playAudio("D5");
+        };
+        if (ev.keyCode == 86) {
+          playAudio("D5sharp");
+        };
+        if (ev.keyCode == 66) {
+          playAudio("E5");
+        };
+        if (ev.keyCode == 20) {
+          playAudio("A3");
+        };
+        if(ev.keyCode == 48) {
+          playAudio("C4");
+          playAudio("E4");
+          playAudio("G4");
+          playAudio("C5");
+        };
+          if(ev.keyCode == 57) {
+          playAudio("C4");
+          playAudio("F4");
+          playAudio("A4");
+          playAudio("C5");
+        };
+          if(ev.keyCode == 56) {
+          playAudio("B3");
+          playAudio("D4");
+          playAudio("F4");
+          playAudio("G4");
+        };
+      });
+      $(document).keyup(function(ev) {
+        if (ev.keyCode == 65) {
+          pauseAudio("C4");
+        };
+        if (ev.keyCode == 87) {
+          pauseAudio("C4sharp");
+        };
+        if (ev.keyCode == 83) {
+          pauseAudio("D4");
+        };
+        if (ev.keyCode == 69) {
+          pauseAudio("D4sharp");
+        };
+        if (ev.keyCode == 68) {
+          pauseAudio("E4");
+        };
+        if (ev.keyCode == 70) {
+          pauseAudio("F4");
+        };
+        if (ev.keyCode == 84) {
+          pauseAudio("F4sharp");
+        };
+        if (ev.keyCode == 71) {
+          pauseAudio("G4");
+        };
+        if (ev.keyCode == 89) {
+          pauseAudio("G4sharp");
+        };
+        if (ev.keyCode == 72) {
+          pauseAudio("A4");
+        };
+        if (ev.keyCode == 85) {
+          pauseAudio("A4sharp");
+        };
+        if (ev.keyCode == 74) {
+          pauseAudio("B4");
+        };
+        if (ev.keyCode == 90) {
+          pauseAudio("C5");
+        };
+        if (ev.keyCode == 88) {
+          pauseAudio("C5sharp");
+        };
+        if (ev.keyCode == 67) {
+          pauseAudio("D5");
+        };
+        if (ev.keyCode == 86) {
+          pauseAudio("D5sharp");
+        };
+        if (ev.keyCode == 66) {
+          pauseAudio("E5");
+        };
+        if (ev.keyCode == 20) {
+          pauseAudio("A3");
+        };
+        if(ev.keyCode == 48) {
+          pauseAudio("C4");
+          pauseAudio("E4");
+          pauseAudio("G4");
+          pauseAudio("C5");
+        };
+          if(ev.keyCode == 57) {
+          pauseAudio("C4");
+          pauseAudio("F4");
+          pauseAudio("A4");
+          pauseAudio("C5");
+        };
+          if(ev.keyCode == 56) {
+          pauseAudio("B3");
+          pauseAudio("D4");
+          pauseAudio("F4");
+          pauseAudio("G4");
+        };
+      });
+    });
+  </script>
 </body>
 </html>
