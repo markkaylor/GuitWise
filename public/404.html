@@ -3,6 +3,7 @@
 <head>
   <title>Oops, something broke</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <style>
     body {
       background-color: #EEEEEE;
@@ -75,10 +76,241 @@
     <p>by going to <a href="/">home</a> or <a href="/users/sign_in">sign in</a>.</p>
   </div>
   <div class="error-game error-banner">
-    <h4>Make some music with Typatone!</h4>
-    <p>Don't stop making music just because something broke.</p>
-    <p>Click the keyboard before you start typing messages that make music.</p>
-    <iframe src="//typatone.com" width="500" height="270" frameborder="0" border="0" style="margin-top: 10px;"></iframe>
+    <h2>Don't stop making music just because something broke.</h2>
+    <p style="font-size: 18px; margin-bottom: 30px;">Use your keyboard to play music.</p>
+    <table>
+      <tr>
+        <td class=></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
   </div>
+  <div style="display: none;">
+    <audio controls id="A4">
+      <source src="assets/A4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="A4sharp">
+      <source src="assets/A4sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="B4">
+      <source src="assets/B4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="C4">
+      <source src="assets/C4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="C4sharp">
+      <source src="assets/C4sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="D4">
+      <source src="assets/D4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="D4sharp">
+      <source src="assets/D4sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="E4">
+      <source src="assets/E4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="F4">
+      <source src="assets/F4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="F4sharp">
+      <source src="assets/F4sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="G4">
+      <source src="assets/G4.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="G4sharp">
+      <source src="assets/G4sharp.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="C5">
+      <source src="assets/C5.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="B3">
+      <source src="assets/B3.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="D5">
+      <source src="assets/D5.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="E5">
+      <source src="assets/E5.mp3" type="audio/mpeg">
+    </audio>
+    <audio controls id="A3">
+      <source src="assets/A3.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <script type="text/javascript">
+    function playAudio(id) {
+      document.getElementById(id).play();
+    };
+
+    function pauseAudio(id) {
+      document.getElementById(id).pause();
+      document.getElementById(id).currentTime = 0;
+    };
+
+    $(document).ready(function() {
+      $(document).keydown(function(ev) {
+        if (ev.keyCode == 65) {
+          playAudio("C4");
+        };
+        if (ev.keyCode == 87) {
+          playAudio("C4sharp");
+        };
+        if (ev.keyCode == 83) {
+          playAudio("D4");
+        };
+        if (ev.keyCode == 69) {
+          playAudio("D4sharp");
+        };
+        if (ev.keyCode == 68) {
+          playAudio("E4");
+        };
+        if (ev.keyCode == 70) {
+          playAudio("F4");
+        };
+        if (ev.keyCode == 84) {
+          playAudio("F4sharp");
+        };
+        if (ev.keyCode == 71) {
+          playAudio("G4");
+        };
+        if (ev.keyCode == 89) {
+          playAudio("G4sharp");
+        };
+        if (ev.keyCode == 72) {
+          playAudio("A4");
+        };
+        if (ev.keyCode == 85) {
+          playAudio("A4sharp");
+        };
+        if (ev.keyCode == 74) {
+          playAudio("B4");
+        };
+        if (ev.keyCode == 90) {
+          playAudio("C5");
+        };
+        if (ev.keyCode == 88) {
+          playAudio("D5");
+        };
+        if (ev.keyCode == 67) {
+          playAudio("E5");
+        };
+        if (ev.keyCode == 86) {
+          playAudio("A3");
+        };
+        if(ev.keyCode == 48) {
+          playAudio("C4");
+          playAudio("E4");
+          playAudio("G4");
+          playAudio("C5");
+        };
+          if(ev.keyCode == 57) {
+          playAudio("C4");
+          playAudio("F4");
+          playAudio("A4");
+          playAudio("C5");
+        };
+          if(ev.keyCode == 56) {
+          playAudio("B3");
+          playAudio("D4");
+          playAudio("F4");
+          playAudio("G4");
+        };
+      });
+      $(document).keyup(function(ev) {
+        if (ev.keyCode == 65) {
+          pauseAudio("C4");
+        };
+        if (ev.keyCode == 87) {
+          pauseAudio("C4sharp");
+        };
+        if (ev.keyCode == 83) {
+          pauseAudio("D4");
+        };
+        if (ev.keyCode == 69) {
+          pauseAudio("D4sharp");
+        };
+        if (ev.keyCode == 68) {
+          pauseAudio("E4");
+        };
+        if (ev.keyCode == 70) {
+          pauseAudio("F4");
+        };
+        if (ev.keyCode == 84) {
+          pauseAudio("F4sharp");
+        };
+        if (ev.keyCode == 71) {
+          pauseAudio("G4");
+        };
+        if (ev.keyCode == 89) {
+          pauseAudio("G4sharp");
+        };
+        if (ev.keyCode == 72) {
+          pauseAudio("A4");
+        };
+        if (ev.keyCode == 85) {
+          pauseAudio("A4sharp");
+        };
+        if (ev.keyCode == 74) {
+          pauseAudio("B4");
+        };
+        if (ev.keyCode == 90) {
+          pauseAudio("C5");
+        };
+        if (ev.keyCode == 88) {
+          pauseAudio("D5");
+        };
+        if (ev.keyCode == 67) {
+          pauseAudio("E5");
+        };
+        if (ev.keyCode == 86) {
+          pauseAudio("A3");
+        };
+        if(ev.keyCode == 48) {
+          pauseAudio("C4");
+          pauseAudio("E4");
+          pauseAudio("G4");
+          pauseAudio("C5");
+        };
+          if(ev.keyCode == 57) {
+          pauseAudio("C4");
+          pauseAudio("F4");
+          pauseAudio("A4");
+          pauseAudio("C5");
+        };
+          if(ev.keyCode == 56) {
+          pauseAudio("B3");
+          pauseAudio("D4");
+          pauseAudio("F4");
+          pauseAudio("G4");
+        };
+      });
+    });
+  </script>
 </body>
 </html>
