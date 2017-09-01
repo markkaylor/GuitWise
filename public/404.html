@@ -316,7 +316,8 @@
         if (ev.keyCode == 66) {
           playAudio("E5");
         };
-        if (ev.keyCode == 20) {
+        if (ev.keyCode == 9) {
+          ev.preventDefault();
           playAudio("A3");
         };
         if(ev.keyCode == 48) {
@@ -390,7 +391,8 @@
         if (ev.keyCode == 66) {
           pauseAudio("E5");
         };
-        if (ev.keyCode == 20) {
+        if (ev.keyCode == 9) {
+          ev.preventDefault();
           pauseAudio("A3");
         };
         if(ev.keyCode == 48) {
